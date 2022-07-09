@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v4.8.2, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <base href=".">
+    <link rel="stylesheet" href="./assets/bootstrap.min.css" type="text/css">
+    <link rel="shortcut icon" href="assets/images/profile_icon.png" type="image/x-icon">
+    <meta name="description" content="">
+    <title>陈彦恺的个人主页</title>
+    <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+    <link rel="stylesheet" href="assets/tether/tether.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="assets/as-pie-progress/css/progress.min.css">
+    <link rel="stylesheet" href="assets/socicon/css/styles.css">
+    <link rel="stylesheet" href="assets/theme/css/style.css">
+    <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+    <link rel="stylesheet" href="assets/mystyle.css">
+    <link type="text/css" rel="stylesheet" href="assets/banner.css"/> 
+    <link rel="stylesheet" type="text/css" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="assets/web/assets/jquery/jquery.min.js"></script>
+    <script src="./assets/jquery.js" type="text/javascript"></script>
+    <script src="./assets/jquery.cycle.all.min.js" type="text/javascript"></script>
+    <script src="./assets/scripts.js" type="text/javascript"></script>
+    <script src="//lib.baomitu.com/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<style>
+  a{text-decoration:underline}
+  body,
+  html {
+      width: 100%;
+      height: 100%;
+  }
+
+  body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+  }
+
+  .bubbles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+  }
+
+  .bubble {
+      position: absolute;
+      bottom: 0;
+
+      background: #f1f1f1;
+      border-radius: 50%;
+      opacity: 0.5;
+      animation: flying 10s infinite ease-in;
+  }
+
+  .bubble:nth-child(1) {
+      width: 40px;
+      height: 40px;
+      left: 10%;
+      animation-duration: 8s;
+  }
+
+  .bubble:nth-child(2) {
+      width: 20px;
+      height: 20px;
+      left: 20%;
+      animation-duration: 5s;
+      animation-delay: 1s;
+  }
+   .bubble:nth-child(3) {
+      width: 50px;
+      height: 50px;
+      left: 35%;
+      animation-duration: 10s;
+      animation-delay: 2s;
+  }
+
+  .bubble:nth-child(4) {
+      width: 80px;
+      height: 80px;
+      left: 50%;
+      animation-duration: 7s;
+      animation-delay: 0s;
+  }
+
+  .bubble:nth-child(5) {
+      width: 35px;
+      height: 35px;
+      left: 55%;
+      animation-duration: 6s;
+      animation-delay: 2s;
+  }
+
+   .bubble:nth-child(6) {
+      width: 45px;
+      height: 45px;
+      left: 65%;
+      animation-duration: 8s;
+      animation-delay: 3s;
+  }
+
+   .bubble:nth-child(7) {
+      width: 25px;
+      height: 25px;
+      left: 75%;
+      animation-duration: 7s;
+      animation-delay: 2s;
+  }
+
+  .bubble:nth-child(8) {
+      width: 80px;
+      height: 80px;
+      left: 80%;
+      animation-duration: 6s;
+      animation-delay: 1s;
+  }
+
+   .bubble:nth-child(9) {
+      width: 15px;
+      height: 15px;
+      left: 70%;
+      animation-duration: 9s;
+      animation-delay: 0s;
+  }
+
+  .bubble:nth-child(10) {
+      width: 50px;
+      height: 50px;
+      left: 85%;
+      animation-duration: 5s;
+      animation-delay: 3s;
+  }
+
+  @keyframes move_wave {
+    0% {
+        transform: translateX(0) translateZ(0) scaleY(1)
+    }
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.55)
+    }
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1)
+    }
+}
+.waveWrapper {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+.waveWrapperInner {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    bottom: -1px;
+}
+.bgTop {
+    z-index: 15;
+    opacity: 0.5;
+}
+.bgMiddle {
+    z-index: 10;
+    opacity: 0.75;
+}
+.bgBottom {
+    z-index: 5;
+}
+.wave {
+    position: absolute;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+}
+.waveTop {
+    background-size: 50% 100px;
+}
+.waveAnimation .waveTop {
+  animation: move-wave 3s;
+   -webkit-animation: move-wave 3s;
+   -webkit-animation-delay: 1s;
+   animation-delay: 1s;
+}
+.waveMiddle {
+    background-size: 50% 120px;
+}
+.waveAnimation .waveMiddle {
+    animation: move_wave 10s linear infinite;
+}
+.waveBottom {
+    background-size: 50% 100px;
+}
+.waveAnimation .waveBottom {
+    animation: move_wave 15s linear infinite;
+}
+
+  @keyframes flying {
+      0% {
+          bottom: -100px;
+          transform: translateX(0);
+      }
+
+      50% {
+          transform: translateX(100px);
+      }
+
+      100% {
+          bottom: 1080px;
+          transform: translateX(-200px);
+      }
+  }
+
+        a:link,
+        a:hover,
+        a:visited,
+        a:active {
+          color: #fff;
+          text-decoration: none;
+        }
+        
+        body {
+          height: 100%;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          background: #fff;
+        }
+        
+        .card-holder {  
+          position: fixed;
+          width: 0px;
+          overflow: visible;
+        }
+        
+        .card-wrapper {
+          display: inline-block;
+          float: right;
+          clear: both;
+        }
+        
+        .card {
+          position: relative;
+          left: 32px;
+          padding: 16px 32px 16px 64px;
+          margin: 8px;  
+          background: #fff;
+          transition: all 0.3s ease-in-out 0.1s;
+        }
+        
+        .card:hover {
+          position: relative;
+          left: 100%;
+          margin-left: -32px;
+          transition: all 0.3s ease-in-out;
+        }
+        
+        .card-content {
+          display: inline-block;
+          color: #fff;
+          font-family: 'Droid Sans', sans-serif;
+          position: relative;
+          z-index: 9999px;
+          font-size: 16px;
+          font-weight: bold;
+          white-space: nowrap;
+        }
+        
+        .bg-01 { background: #539770; }
+        .bg-02 { background: #4B7D74; }
+        .bg-03 { background: #8DC2BC; }
+        .bg-04 { background: #EDD6B4; }
+        .bg-05 { background: #BE7467; }
+        .bg-06 { background: #E2AE63; }
+</style>
+
+
+<body>
+    <div class='card-holder' style="z-index: 9999">
+    <div class='card-wrapper'>
+        <a href='homepage_chinese.html#A1'>
+            <div class='card bg-01'>
+                <span class='card-content'>返回顶部</span>
+            </div>
+        </a>
+    </div>
+    <div class='card-wrapper'>
+        <a href='homepage_chinese.html#A2'>
+            <div class='card bg-02'>
+                <span class='card-content'>教育经历</span>
+            </div>
+        </a>
+    </div>
+    <div class='card-wrapper'>
+        <a href='homepage_chinese.html#A3'>
+            <div class='card bg-03'>
+                <span class='card-content'>课业学习</span>
+            </div>
+        </a>
+    </div>
+    <div class='card-wrapper'>
+        <a href='homepage_chinese.html#A4'>
+            <div class='card bg-04'>
+                <span class='card-content'>学术科创</span>
+            </div>
+        </a>
+    </div>
+    <div class='card-wrapper'>
+        <a href='homepage_chinese.html#A5'>
+            <div class='card bg-05'>
+                <span class='card-content'>社工志服</span>
+            </div>
+        </a>
+    </div>
+    <div class='card-wrapper'>
+        <a href='homepage_chinese.html#A6'>
+            <div class='card bg-06'>
+                <span class='card-content'>个人博客</span>
+            </div>
+        </a>
+    </div>
+  </div>
+
+  <script>
+    $(function(){
+        //锚点跳转滑动效果  
+        $('a[href*=#],area[href*=#]').click(function() {
+          if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var $target = $(this.hash);
+            $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');if ($target.length) {
+              var targetOffset = $target.offset().top;
+              $('html,body').animate({
+                scrollTop: targetOffset
+              }, 1000);
+            return false;
+          }
+        }
+      });
+    })
+  </script>
+
+  <a name="A1"></a>
+  <section class="header5 cid-r3mcMCaeWf mbr-fullscreen mbr-parallax-background" id="header5-3">
+    <div class="waveWrapper waveAnimation" style="z-index: 9">
+      <div class="waveWrapperInner bgTop">
+        <div class="wave waveTop" style="background-image: url('img/wave-top.png')"></div>
+      </div>
+      <div class="waveWrapperInner bgMiddle">
+        <div class="wave waveMiddle" style="background-image: url('img/wave-mid.png')"></div>
+      </div>
+      <div class="waveWrapperInner bgBottom">
+        <div class="wave waveBottom" style="background-image: url('img/wave-bot.png')"></div>
+      </div>
+    </div>
+    <div class="bubbles">
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+    </div>
+    <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(0, 0, 0);">
+    </div>
+    <div class="container" style="z-index: 9999">
+      <div align="right">
+        <a class="btn btn-md btn-white-outline display-3 top:0 right" href="homepage_english.html">English Version</a>
+      </div>
+      <div class="row justify-content-center">
+        <div class="mbr-white col-md-10">
+          <h1 class="mbr-section-title align-center pb-3 mbr-fonts-style display-2">欢迎访问陈彦恺的个人主页~</h1>
+            <p class="mbr-text align-center display-5 pb-3 mbr-fonts-style">Welcome to Chen Yankai's homepage~</p>
+            <div align="center">
+              <img src="assets/images/Pikachu.gif" alt="皮卡丘" style="width: 30%;">  
+            </div>
+            <div class="mbr-section-btn">
+              <a class="btn btn-md btn-white-outline display-4" href="homepage_chinese.html#A2">即刻启程</a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <a name="A2"></a>
+  <section class="header3 cid-r3otdsLP1U mbr-fullscreen" id="header3-9" style="background: url(assets/images/background_02.jpg) ; background-size:100% 100% ; background-attachment: fixed">
+    <div class="container">
+      <div class="media-container-row">
+        <div align="right">
+          <img src="assets/images/pic_02.png" alt="教育经历" title="" style="width: 100%;">
+        </div>
+        <div class="media-content">
+            <h1 class="mbr-section-title mbr-white pb-3 mbr-fonts-style display-2"><b>&nbsp&nbsp陈彦恺</b></h1>
+          <h1 class="mbr-section-subtitle align-left mbr-white mbr-light pb-3 mbr-fonts-style display-5">&nbsp&nbsp&nbsp南京大学&nbsp&nbsp计算机与金融工程实验班 
+            <br>&nbsp&nbsp&nbsp2018级本科生
+            <h1 class="mbr-section-subtitle align-left mbr-white mbr-light pb-3 mbr-fonts-style display-6">&nbsp&nbsp&nbsp&nbspchenyankai &nbspa#t &nbspsmail.nju.edu.cn 
+              <br>&nbsp&nbsp&nbsp（请将“ &nbspa#t &nbsp”替换为“@”）</h1>
+            <div class="mbr-section-text mbr-white pb-3 ">
+              <b>
+                <p class="mbr-text mbr-fonts-style display-5">&nbsp&nbsp&nbsp教育经历</p>
+              </b>
+              <b>
+                <p class="mbr-text mbr-fonts-style display-6">&nbsp&nbsp&nbsp▶ 本科</p>
+              </b>
+              <b>
+              <p class="mbr-text mbr-fonts-style display-7">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· 2018.09&nbsp--&nbsp2022.06&nbsp&nbsp&nbsp&nbsp&nbsp南京大学</b>
+                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp计算机科学与技术&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp理学学士
+                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp金融工程&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp经济学学士(辅修)
+              <b>
+              <p class="mbr-text mbr-fonts-style display-7" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp·&nbsp2021.07&nbsp--&nbsp2021.08&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp哈尔滨工业大学</b>
+                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp数字经济与智能决策&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp国际暑期学校(C9交换生)
+              </p>
+              <b>
+                <p class="mbr-text mbr-fonts-style display-6">&nbsp&nbsp&nbsp▶ 高中</p>
+              </b>
+              <b>
+              <p class="mbr-text mbr-fonts-style display-7" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· 2014.09&nbsp--&nbsp2018.06&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp江苏省阜宁中学</b>
+              </p>
+              <b>
+                <p class="mbr-text mbr-fonts-style display-6">&nbsp&nbsp&nbsp▶ 初中</p>
+              </b>
+              <b>
+              <p class="mbr-text mbr-fonts-style display-7" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· 2014.03&nbsp--&nbsp2014.06&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp阜宁县明达初级中学</b>
+              <b>
+              <p class="mbr-text mbr-fonts-style display-7" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· 2011.09&nbsp--&nbsp2014.02 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp北京市第一七一中学</b>
+              </p>
+              <b>
+                <p class="mbr-text mbr-fonts-style display-6">&nbsp&nbsp&nbsp▶ 小学</p>
+              </b>
+              <b>
+              <p class="mbr-text mbr-fonts-style display-7">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· 2005.09&nbsp--&nbsp2011.06&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp北京市东城区北池子小学</b>
+              </p>
+              </div>
+            </div>
+        </div>
+      </div>
+  </section>
+
+    <a name="A3"></a>
+    <section class="header3 cid-r3qD4KEELP mbr-fullscreen" id="header3-7"
+    style="background: url(assets/images/background_03.jpg) ; background-size:100% 100% ; background-attachment: fixed">>
+    <div class="container">
+      <div class="media-container-row">
+          <div class="media-content">
+              <h1 class="mbr-section-title mbr-white pb-3 mbr-fonts-style display-2"><b>&nbsp&nbsp课业学习</b></h1>
+              <h1 class="mbr-section-subtitle align-left mbr-white mbr-light pb-3 mbr-fonts-style display-5">
+                &nbsp&nbsp&nbsp&nbsp理论联合实践&nbsp&nbsp二者兼顾
+                <br>&nbsp&nbsp&nbsp&nbsp学科深度交叉&nbsp&nbsp多元发展
+                <p class="mbr-text mbr-fonts-style display-7" >
+                &nbsp&nbsp&nbsp&nbsp&nbsp
+                <u><a href="assets/files/南京大学人民奖学金-2021.jpg" target="_blank" style="color:yellowgreen">[南京大学人民奖学金]</a></u>
+                &nbsp&nbsp&nbsp
+                <u><a href="assets/files/南京大学优秀学生干部-2021.jpg" target="_blank" style="color:yellowgreen">[南京大学优秀学生干部]</a></u>
+                <br>
+                &nbsp&nbsp&nbsp&nbsp&nbsp
+                <u><a href="assets/files/南京大学优秀共青团干部标兵-2020.jpg" target="_blank" style="color:yellowgreen">[南京大学优秀共青团干部标兵]</a></u>
+                &nbsp&nbsp&nbsp
+                <u><a href="assets/files/南京大学优秀共青团干部-2021.jpg" target="_blank" style="color:yellowgreen">[南京大学优秀共青团干部]</a></u>
+              </p></h1>
+                <div class="mbr-section-text mbr-white pb-3 ">
+                  <b>
+                    <p class="mbr-text mbr-fonts-style display-5">&nbsp&nbsp&nbsp&nbsp&nbsp语言能力</p>
+                  </b>  
+                    <p class="mbr-text mbr-fonts-style display-7" ><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp▶ 汉语</b>
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· 普通话水平测试&nbsp-&nbsp二级甲等(91.7分)
+                    <br><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp▶ 英语</b>
+                      <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· 全国大学英语四级考试&nbsp-&nbsp笔试：603分&nbsp&nbsp&nbsp&nbsp口试：A
+                      <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· 全国大学英语六级考试&nbsp-&nbsp笔试：587分&nbsp&nbsp&nbsp&nbsp口试：B+
+                    </br>
+              </div>
+                <div class="mbr-section-text mbr-white pb-3 ">
+                  <b>
+                    <p class="mbr-text mbr-fonts-style display-5">&nbsp&nbsp&nbsp&nbsp&nbsp专业课程</p>
+                  </b>  
+                    <p class="mbr-text mbr-fonts-style display-7" ><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp▶ 金融软件工程</b>
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· 课程设计：韭怪&nbsp——&nbsp一款基于Flutter框架开发的金融资讯APP
+                    <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <b><u><a href="assets/files/JiuMonster.apk" target="_blank" style="color:yellowgreen">[apk]</a></u></b>&nbsp&nbsp&nbsp&nbsp
+                    <b><u><a href="assets/files/【路演用】“韭怪”APP介绍.pdf" target="_blank" style="color:yellowgreen">[pdf]</a></u></b>
+                    <br><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp▶ 数据结构与金融算法
+                      <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp▶ 金融大数据处理技术</b>
+                      <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· 课程设计：<b><u><a href="https://tianchi.aliyun.com/competition/entrance/231576/introduction" target="_blank" style="color:yellowgreen">天猫用户复购预测</a></u></b>
+                      <br><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp▶ C/C++程序设计
+                      <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp▶ Python人工智能程序设计
+                      <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp▶ Python商业数据科学导论
+                      <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp▶ 应用统计与R语言
+                      <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp▶ 应用时间序列(R语言)
+                      <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp▶ 数值分析与MATLAB计算软件
+                      <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp▶ 电子商务实务
+                      <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp▶ 计算机数学建模
+                      <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp▶ 文本分析
+                      <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp▶ Python数据分析&nbsp&nbsp&nbsp&nbsp<u><a href="assets/files/《Python数据分析入门》结课证明_陈彦恺.jpg" target="_blank" style="color:yellowgreen">[北大光华BA工作坊]</a></u>
+                      <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp▶ 数据合规与隐私保护&nbsp&nbsp&nbsp<u><a href="assets/files/《数据合规与隐私保护》结课证明_陈彦恺.jpg" target="_blank" style="color:yellowgreen">[北大光华BA工作坊]</a></u>
+                    </b>
+              </div>
+              <div class="mbr-section-btn">
+                <p class="mbr-text mbr-fonts-style display-7" ><b>&nbsp&nbsp&nbsp&nbsp&nbsp</b>
+                <a class="btn btn-md btn-white-outline display-4" href="assets/files/南京大学计算机与金融工程实验班2018级二次选拔招生简章.pdf" target="_blank">了解南大计金班更多信息</a>
+              </div>
+          </div>
+          <div class="mbr-figure" style="width: 100%;">
+            <img src="assets/images/pic_03.png" alt="课业学习" title="">
+        </div>
+      </div>
+  </div>
+    </section>
+  </section>
+
+  <a name="A4"></a>
+  <section class="header3 cid-r3otdsLP1U mbr-fullscreen" id="header3-9" style="background: url(assets/images/background_04.jpg) ; background-size:100% 100% ; background-attachment: fixed">
+    <div class="container">
+      <div class="media-container-row">
+        <div align="right">
+          <img src="assets/images/pic_04.png" alt="学术科创" title="" style="">
+        </div>
+        <div class="media-content">
+            <h1 class="mbr-section-title mbr-white pb-3 mbr-fonts-style display-2"><b>&nbsp&nbsp学术科创</b></h1>
+          <h1 class="mbr-section-subtitle align-left mbr-white mbr-light pb-3 mbr-fonts-style display-5">&nbsp&nbsp&nbsp科创筑梦想&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp青春向未来
+            <br>&nbsp&nbsp&nbsp把论文书写在祖国的大地上</h1>
+            <div class="mbr-section-text mbr-white pb-3 ">
+              <b>
+                <p class="mbr-text mbr-fonts-style display-5">&nbsp&nbsp&nbsp学科竞赛</p>
+              </b>
+              <p class="mbr-text mbr-fonts-style display-7" >
+                <b>&nbsp&nbsp&nbsp&nbsp&nbsp▶ 全国大学生数学竞赛</b>&nbsp&nbsp&nbsp&nbsp<u><a href="assets/files/全国大学生数学竞赛三等奖-2021.jpg" target="_blank" style="color:yellowgreen">[2021&nbsp·&nbsp三等奖]</a></u>
+                <br><b>&nbsp&nbsp&nbsp&nbsp&nbsp▶ 江苏省大学生知识竞赛</b>&nbsp&nbsp&nbsp&nbsp<u><a href="assets/files/江苏省大学生知识竞赛二等奖-2021.jpg" target="_blank" style="color:yellowgreen">[2021&nbsp·&nbsp二等奖]</a></u>
+            </div>
+            <div class="mbr-section-text mbr-white pb-3 ">
+              <b>
+                <p class="mbr-text mbr-fonts-style display-5">&nbsp&nbsp&nbsp毕业设计</p>
+              </b>
+              <p class="mbr-text mbr-fonts-style display-7" >
+                <b>&nbsp&nbsp&nbsp&nbsp&nbsp▶ 基于深度学习的人职匹配模型研究</b>
+                <br>
+                <br><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp【内容简介】</b>
+                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp随着就业形势的日益严峻，越来越多的求职者难以找到满意的工作，同时，越来越多的企业难以找到合适的雇员。要解决这一问题，就要做好人职匹配。人职匹配理论认为：人的个性结构存在差异，人们要根据自己的个性特点找到自己合适的职业，企业也要根据自身的岗位特点来科学、合理地筛选到自身需要的人才，从而在双方之间达到匹配的目的。
+                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp关于人职匹配，学术界和产业界惯常的做法是将其设计为人才或者岗位的推荐问题。而近来，有相关研究者从尝试新的角度去关注人职匹配问题——例如，有研究者根据雇员的历史跳槽记录，来预测他（她）在下一次将在何时跳槽到一个什么样的公司、获得一个什么样的职位；也有相关研究者通过研究雇员的社交关系网络，来预测人才的流动。然而，虽然这些新兴的研究为人职匹配注入了崭新的活力，但它们并未能够真正地从一个较为全面的视角实现人职匹配。
+                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp本研究拟基于深度学习算法，对相关简历、招聘启事等文本内容进行挖掘、处理以及分析，并适当引入其他相关内容，进而从一个较为全面的视角实现一种人职匹配模型，并用真实数据加以测试，力求具有实际应用性。
+            </div>
+            <div class="mbr-section-text mbr-white pb-3 ">
+              <b>
+                <p class="mbr-text mbr-fonts-style display-5">&nbsp&nbsp&nbsp科创项目</p>
+              </b>
+              <p class="mbr-text mbr-fonts-style display-7" >
+                <b>&nbsp&nbsp&nbsp&nbsp&nbsp▶ 从绿水青山到金山银山的创新之路&nbsp——&nbsp“五位一体&nbsp·&nbsp协同发展”的新时代发展模式研究（以盐城市为例）</b>
+                <br>
+                <br><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp【内容简介】</b>
+                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp作品从生态旅游产品这一独特视角出发来研究盐城湿地的生态旅游发展情况，在解析盐城黄海湿地自然资源、人文资源、地理区位、发展历史的基础上，通过实地调研、问卷发放和半结构式访谈等形式，了解调研地点湿地生态旅游产品的成因、规划、设计和管理情况，分析生态旅游产品开发中存在的问题，并进一步分析其生态旅游发展存在的问题与不足。同时，利用大数据挖掘等技术，分析、论证民众对于生态旅游产业的态度、意见与建议。此外，还运用统计学手段，对相关经济学数据进行分析，论证出生态旅游产业有效地带动了其他方面，实现了“五位一体”协同发展，从而使得盐城市走出了一条从“绿水青山”到“金山银山”的创新之路。在此基础上，为整个盐城黄海湿地生态旅游的发展提出建议，并从宏观层面对未来的发展作出初步的探索，为中国的社会主义现代化建设提出了范本。
+                <br>
+                <br><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp【主要贡献】</b>
+                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· 第一作者，负责统筹全面工作。
+                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· 同时主要完成数据处理与分析、数据可视化等内容。
+                <br>
+                <br><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp【相关荣誉】</b>
+                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· <b><u><a href="assets/files/“挑战杯”全国大学生课外学术科技作品竞赛南京大学选拔赛三等奖-2021.jpg" target="_blank" style="color:yellowgreen">第十七届“挑战杯”全国大学生课外学术科技作品竞赛南京大学选拔赛三等奖</a></u></b>
+                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· <b><u><a href="https://mp.weixin.qq.com/s/hXYBNaZBcq7FmQBcbWgNSA" target="_blank" style="color:yellowgreen">南京大学特别专项社会实践项目</a></u></b>
+                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· <b><u><a href="https://tuanwei.nju.edu.cn/a2/70/c24691a434800/page.htm" target="_blank" style="color:yellowgreen">南京大学优秀社会实践项目</a></u></b>
+                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· <b><u><a href="assets/files/南京大学大学生创新训练计划项目结题证书-2022.jpg" target="_blank" style="color:yellowgreen">南京大学大学生创新训练计划项目（结题）</a></u></b>
+                <br>
+                <br><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp【媒体报道】</b>
+                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· <b><u><a href="https://xiaoyuan.cycnet.com.cn/s?uid=1763438&app_version=1.1.7&sid=443224&time=1565941755&signature=3NRxPz8j0mdBYbOGDW91lvbBZI89j37yAXV56qwogJEpkLK2eQ&sign=2667ac7f47451f6c8ef34edabd6ea7d8" target="_blank" style="color:yellowgreen">南京大学学子走进盐城湿地 助力生态旅游协调发展</a></u></b>(中国青年网)
+                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· <b><u><a href="https://news.nju.edu.cn/zhxw/20201222/i102032.html" target="_blank" style="color:yellowgreen">我校举行2020年度“南雍育才志 青春逐梦行”实践育人成果汇报晚会</a></u></b>(南京大学新闻网)
+                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp【注】团队受邀参加该晚会的演出&nbsp&nbsp<b><u><a href="assets/files/实践晚会参演证明-2020.jpg" target="_blank" style="color:yellowgreen">[参演证明]</a></u></b>
+                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· <b><u><a href="https://mp.weixin.qq.com/s/qhz_lPzeJbXKy-RxKjaUPQ" target="_blank" style="color:yellowgreen">社会实践团队专访|江淮乐地寻“宝”：《五位一体·协同发展的新时代盐城经验》</a></u></b>(南青实践)
+            </div>
+        </div>
+      </div>
+  </section>
+
+  <a name="A5"></a>
+  <section class="header3 cid-r3otdsLP1U mbr-fullscreen" id="header3-9" style="background: url(assets/images/background_05.jpg) ; background-size:100% 100% ; background-attachment: fixed">
+    <div class="container">
+      <div class="media-container-row">
+        <div align="right">
+          <img src="assets/images/pic_05.png" alt="社工志服" title="" style="">
+        </div>
+        <div class="media-content">
+            <h1 class="mbr-section-title mbr-white pb-3 mbr-fonts-style display-2"><b>&nbsp&nbsp社工志服</b></h1>
+          <h1 class="mbr-section-subtitle align-left mbr-white mbr-light pb-3 mbr-fonts-style display-5">&nbsp&nbsp&nbsp为科创助力&nbsp&nbsp为团旗增辉&nbsp&nbsp为青春添彩</h1>
+            <div class="mbr-section-text mbr-white pb-3 ">
+              <b>
+                <p class="mbr-text mbr-fonts-style display-5">&nbsp&nbsp&nbsp团学社工</p>
+              </b>
+              <p class="mbr-text mbr-fonts-style display-7" >
+                <b>&nbsp&nbsp&nbsp&nbsp&nbsp▶ 共青团南京大学委员会&nbsp--&nbsp学术与“双创”部</b>
+                <p class="mbr-text mbr-fonts-style display-7" >
+                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                  <u><a href="assets/files/南京大学优秀共青团干部标兵-2020.jpg" target="_blank" style="color:yellowgreen">[南京大学优秀共青团干部标兵]</a></u>
+                  <br>
+                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                  <b>风采展示：</b><u><a href="https://mp.weixin.qq.com/s/StmUWg3aR7uSoyF6gEyXfA" target="_blank" style="color:yellowgreen">[南大青年]</a></u>&nbsp&nbsp&nbsp&nbsp<u><a href="https://mp.weixin.qq.com/s/zYag2MjlbPDhc-p_7x337g" target="_blank" style="color:yellowgreen">[NJU计小微]</a></u>&nbsp
+                  <br>
+                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                  <u><a href="assets/files/南京大学优秀共青团干部-2021.jpg" target="_blank" style="color:yellowgreen">[南京大学优秀共青团干部]</a></u>
+                  <br>
+                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                  <u><a href="assets/files/南京大学优秀学生干部-2021.jpg" target="_blank" style="color:yellowgreen">[南京大学优秀学生干部]</a></u>
+                </p>
+                <p class="mbr-text mbr-fonts-style display-7" >
+                  <b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp【工作经历】</b>
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· 2020.09&nbsp--&nbsp2021.08&nbsp&nbsp&nbsp副部长&nbsp&nbsp&nbsp&nbsp<b><u><a href="assets/files/学创部副部长工作证明-2021.jpg" target="_blank" style="color:yellowgreen">[工作证明]</a></u></b>
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· 2019.09&nbsp--&nbsp2020.08&nbsp&nbsp&nbsp双创服务中心主任&nbsp&nbsp&nbsp&nbsp<b><u><a href="assets/files/学创部主任工作证明-2020.jpg" target="_blank" style="color:yellowgreen">[工作证明]</a></u></b>
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· 2018.09&nbsp--&nbsp2019.08&nbsp&nbsp&nbsp干事&nbsp&nbsp&nbsp&nbsp<b><u><a href="assets/files/学创部干事工作证明-2019.jpg" target="_blank" style="color:yellowgreen">[工作证明]</a></u></b>
+                  <br>
+                  <br><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp【相关活动】</b>
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>· 全国青少年科学营南京大学分营&nbsp--&nbsp“编程小课堂”主讲</b><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b><u><a href="courses/scratch.html" target="_blank" style="color:yellowgreen">[课程网站]</a></u></b>
+                  <br><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp◆&nbsp观看地址：&nbsp</b><b><u><a href="https://cloud.kexueying.org.cn/cms/Practice/index?web_id=27" target="_blank" style="color:yellowgreen">[中国科协·云上科学营]</a></u></b>&nbsp&nbsp&nbsp&nbsp<b><u><a href="https://www.bilibili.com/video/BV1wM4y1L7oR" target="_blank" style="color:yellowgreen">[哔哩哔哩]</a></u></b>
+                  <br><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp◆&nbsp媒体报道：</b>
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp『南京大学计算机科学与技术系的陈彦恺和唐瑞泽两位同学带领大家“搭建小小的编程世界”，通过编程系列课程的聆听和小组交流学习，营员们加深了对编程的认知。同时，为了激发学生的创新精神，科学营组织了“心向南兮，以梦为‘码’”编程大赛，收到了大量高质量的作品……』
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp——&nbsp<b><u><a href="http://www.xiaoxiaotong.org/News/ArticleView.aspx?AID=246378" target="_blank" style="color:yellowgreen">[全国青少年科技创新中心]</a></u></b>
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp『计算机专业学生陈彦恺为大家带来了《编程入门课程》。营员们通过观看在线科学实验讲解视频、线下动手操作科学实验的方式，亲身去体会实验的乐趣，探索科学实验的奥秘……』
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp——&nbsp<b><u><a href="https://baijiahao.baidu.com/s?id=1675346928183794640" target="_blank" style="color:yellowgreen">[百度]</a></u></b>&nbsp&nbsp&nbsp&nbsp<b><u><a href="https://www.163.com/dy/article/FKARKQFU051183VR.html" target="_blank" style="color:yellowgreen">[网易新闻]</a></u></b>
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp『给我留下深刻印象的就是编程入门课程，尤其是我们的陈彦恺老师，他的认真负责，使我非常感动……已过了饭点，陈老师不顾饥饿，与我们在线答疑，帮助我们把知识捋了一遍，且耐心仔细地对于同学们的每一个问题逐一解答，为同学们逐一演示。』
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp——&nbsp<b><u><a href="https://www.shssp.org/NewsInfo.aspx?p=FB60D66BCD8D0F9C241AF7CA5EE81C38289B63F5F9C82D48B07DAAFA84A2CFF4" target="_blank" style="color:yellowgreen">[上海市青少年科技创新中心]</a></u></b>
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp『南京大学计算机科学与技术系的陈彦恺同学带领大家"搭建小小的编程世界"，通过课程和小组交流学习，营员们加深了对编程的认知，掌握了基本的编程本领。最后的编程大赛上更是收到了营员们很多高质量的编程作品。』
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp——&nbsp<b><u><a href="https://news.nju.edu.cn/xydt/20210719/i104440.html" target="_blank" style="color:yellowgreen">[南京大学新闻网]</a></u></b>
+                  <br>
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>· 南京大学第二十四次学生代表大会&nbsp--&nbsp代表</b>
+                  <br><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp◆&nbsp提案：</b>在校园内增添自动体外除颤仪(AED)等急救设施</b>
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b><u><a href="assets/files/122.0.4 在校园内增添自动体外除颤仪（AED）等急救设施.pdf" target="_blank" style="color:yellowgreen">[pdf]</a></u></b>
+                  <br><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp◆&nbsp媒体报道：</b>
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· <b><u><a href="https://mp.weixin.qq.com/s/XyreDWcarKzWgNDWKIzJlQ" target="_blank" style="color:yellowgreen">有人倒下，请摁下红色按钮</a></u></b>(腾讯)
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· <b><u><a href="https://mp.weixin.qq.com/s/EvTp8aBuwO2haBM8Bv-v7Q" target="_blank" style="color:yellowgreen">当产品经理开始思考做一个好人的代价</a></u></b>(三联生活周刊)
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· <b><u><a href="https://mp.weixin.qq.com/s/bqzF9MPlkYjuT_d-FIJ-IA" target="_blank" style="color:yellowgreen">调查|解密南大“救命神器”——AED除颤器</a></u></b>(新潮)
+                  <br>
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>· 南京大学南南学术科创月开幕嘉年华&nbsp--&nbsp总统筹</b>
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp◆ <b><u><a href="https://mp.weixin.qq.com/s/Uszlo2VZYCpPCUKA8UoPlw" target="_blank" style="color:yellowgreen">高能预警！速速燃动想象力，科创嘉年华来啦！</a></u></b>(南京大学官方微信号)
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp◆ <b><u><a href="https://mp.weixin.qq.com/s/5nxpZLSgNMIZhUirb0uJYQ" target="_blank" style="color:yellowgreen">玩转花式科技，享受科创“派对”！大中小学生都来了</a></u></b>(南京大学官方微信号)
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp◆ <b><u><a href="https://news.nju.edu.cn/zhxw/20201102/i101276.html" target="_blank" style="color:yellowgreen">“科创筑梦想，青春向未来”——2020南南学术科创月开幕嘉年华举行</a></u></b>(南京大学新闻网)
+                  <br>
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>· 南京大学网络安全宣传周&nbsp--&nbsp总统筹</b>
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp◆ <b>观看地址：</b><b><u><a href="https://security.nju.edu.cn/aqzs/spl/20201202/i171647.html" target="_blank" style="color:yellowgreen">[南京大学校内]</a></u></b>&nbsp&nbsp&nbsp&nbsp<b><u><a href="https://security.nju.edu.cn/DFS//file/2020/12/02/20201202091844709uqretv.mp4" target="_blank" style="color:yellowgreen">[南京大学校外]</a></u></b>
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp◆ <b>媒体报道：</b>
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· <b><u><a href="https://mp.weixin.qq.com/s/aphW55gUbolsNt3rYX3Rdg" target="_blank" style="color:yellowgreen">Ta终于！来！咯！独家秘笈，助你乘风破浪！</a></u></b>(南京大学信息门户)
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· <b><u><a href="https://mp.weixin.qq.com/s/ynEIV9AsPJ5QsWnpWD9hrw" target="_blank" style="color:yellowgreen">戳这里！填问卷，拿奖品！还有趣味互动活动等你来～</a></u></b>(南京大学信息门户)
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp◆ <b>额外经历：</b>数次发现校内信息系统高危漏洞，并予以上报，被予以表彰，并受到领导接见。</b><b><u><a href="assets/files/漏洞报送证书-2022.jpeg" target="_blank" style="color:yellowgreen">[漏洞报送证书]</a></u></b>
+                  <br>
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>· “挑战杯”、“创青春”等赛事保障(校赛、省赛、国赛)</b>
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp◆ 2019：&nbsp“挑战杯”&nbsp南京大学&nbsp→&nbsp南京农业大学&nbsp→&nbsp北京航空航天大学
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp◆ 2020：&nbsp“挑战杯”&nbsp南京大学&nbsp→&nbsp淮阴工学院&nbsp→&nbsp东北林业大学&nbsp(线上与线下相结合)
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· <b><u><a href="https://mp.weixin.qq.com/s/4gc_plcBeOsx-ZZ_hZ2juw" target="_blank" style="color:yellowgreen">三金一铜！这项国赛南大创纪录了！</a></u></b>(南京大学官方微信号)
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp◆ 2021：&nbsp“挑战杯”&nbsp南京大学&nbsp→&nbsp南京中医药大学&南京信息职业技术学院&nbsp→&nbsp四川大学&nbsp(线上与线下相结合)
+                  <br>
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>· 与兄弟高校间进行校际交流</b>
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp◆ 2018.10：&nbsp中国药科大学&nbsp&nbsp校园科技创新节&nbsp--&nbsp领队
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp◆ 2018.12：&nbsp南京工业大学&nbsp&nbsp“智通杯”科技竞赛&nbsp--&nbsp领队
+                </p>
+              </p>
+              <p class="mbr-text mbr-fonts-style display-7" >
+                <b>&nbsp&nbsp&nbsp&nbsp&nbsp▶ 南京大学本科招生办公室&nbsp--&nbsp盐城市中学招生理事</b>
+                <p class="mbr-text mbr-fonts-style display-7" >
+                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· 南京大学“南星梦想计划”招生宣传活动十佳团队(负责人)
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b><u><a href="https://mp.weixin.qq.com/s/DtxiBWWw5X1izJeEGG5fyA" target="_blank" style="color:yellowgreen">[2022年最新活动详情]</a></u></b>
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp◆&nbsp连续四年获奖：<b><u><a href="assets/files/南星梦想计划十佳团队-2019.jpg" target="_blank" style="color:yellowgreen">[2019]</a></u></b>&nbsp&nbsp&nbsp<b><u><a href="assets/files/南星梦想计划十佳团队-2020.jpg" target="_blank" style="color:yellowgreen">[2020]</a></u></b>&nbsp&nbsp&nbsp<b><u><a href="assets/files/南星梦想计划十佳团队-2021.jpg" target="_blank" style="color:yellowgreen">[2021]</a></u></b>&nbsp&nbsp&nbsp<b><u><a href="assets/files/南星梦想计划十佳团队-2022.jpg" target="_blank" style="color:yellowgreen">[2022]</a></u></b>
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· 2021年招生季在中国青年报客户端、微信视频号等平台出镜介绍南京大学计算机科学与技术系
+                  <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp◆&nbsp观看地址：<b><u><a href="http://s.cyol.com/articles/2021-06/18/content_DjZ6dqH2.html" target="_blank" style="color:yellowgreen">[中国青年报客户端]</a></u></b>
+                </p>
+                <p class="mbr-text mbr-fonts-style display-7" >
+                  <b>&nbsp&nbsp&nbsp&nbsp&nbsp▶ 南京大学计算机科学与技术系图书阅览室&nbsp--&nbsp助理馆员</b>
+                  <p class="mbr-text mbr-fonts-style display-7" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<u><a href="assets/files/南京大学勤工助学先进个人-2021.jpg" target="_blank" style="color:yellowgreen">[南京大学勤工助学先进个人]</a></u></p>
+                  <p class="mbr-text mbr-fonts-style display-7" >
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>· 工作职责：</b>维护图书室环境、办理借还图书等业务、图书上架与盘点、发布通知与危机公关、信息检索与数据分析
+                  </p>
+                  <b>
+                    <p class="mbr-text mbr-fonts-style display-5">&nbsp&nbsp&nbsp志愿服务</p>
+                  </b>
+                  <p class="mbr-text mbr-fonts-style display-7" >
+                    <b>&nbsp&nbsp&nbsp&nbsp&nbsp▶ 截至目前，累计志愿时长215.2小时</b>    
+                    <p class="mbr-text mbr-fonts-style display-7" >
+                      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· <b>主要服务经历：</b>疫情防控、迎新接待、活动场务……
+                  </p>
+                  <b>
+                    <p class="mbr-text mbr-fonts-style display-5">&nbsp&nbsp&nbsp社团活动</p>
+                  </b>
+                  <p class="mbr-text mbr-fonts-style display-7" >
+                    <b>&nbsp&nbsp&nbsp&nbsp&nbsp▶ 南京大学乡村振兴工作营&nbsp--&nbsp乡振研讨沙龙会员</b>    
+                    <p class="mbr-text mbr-fonts-style display-7" >
+                      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· <b>主要工作内容：</b>参与乡村振兴等议题的分享与研讨、组织筹办乡村振兴高峰论坛、策划并参与乡村振兴线下工作营等实践活动……
+                  </p>
+                  <p class="mbr-text mbr-fonts-style display-7" >
+                    <b>&nbsp&nbsp&nbsp&nbsp&nbsp▶ 南京大学英语俱乐部&nbsp--&nbsp学术部副部长</b>    
+                    <p class="mbr-text mbr-fonts-style display-7" >
+                      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp· <b>主要工作内容：</b>负责命制四六级模考试卷、策划并筹办阅读写作训练营以及英语文化夜等活动……
+                  </p>
+            </div>
+        </div>
+      </div>
+  </section>
+
+  <a name="A6">
+  <section class="header5 cid-r3mcMCaeWf mbr-fullscreen mbr-parallax-background" id="header5-3" style="background: url(assets/images/background_06.gif) ; background-size:100% 100% ; background-attachment: fixed">
+    <div class="waveWrapper waveAnimation" style="z-index: 9">
+      <div class="waveWrapperInner bgTop">
+        <div class="wave waveTop" style="background-image: url('img/wave-top-A6.png')"></div>
+      </div>
+      <div class="waveWrapperInner bgMiddle">
+        <div class="wave waveMiddle" style="background-image: url('img/wave-mid-A6.png')"></div>
+      </div>
+      <div class="waveWrapperInner bgBottom">
+        <div class="wave waveBottom" style="background-image: url('img/wave-bot-A6.png')"></div>
+      </div>
+    </div>
+    <div class="bubbles">
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+    </div>
+    <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(0, 0, 0);">
+    </div>
+    <div class="container" style="z-index: 9999">
+      <div class="row justify-content-center">
+        <div class="mbr-white col-md-10">
+          <h1 class="mbr-section-title align-center pb-3 mbr-fonts-style display-2">陈彦恺的个人博客</h1>
+            <p class="mbr-text align-center display-5 pb-3 mbr-fonts-style">Chen Yankai's Blog</p>
+            <div align="center">
+              <img src="assets/images/XiaoLan.gif" alt="小蓝" style="width: 17.5%;">  
+            </div>
+            <br>
+            <p class="mbr-text align-center display-6 pb-3 mbr-fonts-style">--&nbsp删除掉我所经历过的任何一个瞬间&nbsp我都不能成为今天的自己&nbsp--</p>
+            <p class="mbr-text align-center display-7 pb-3 mbr-fonts-style">--&nbspEverything worthwhile takes time and commitment&nbsp--</p>
+            <div class="mbr-section-btn">
+              <a class="btn btn-md btn-white-outline display-4" href="https://www.jianshu.com/u/1fe80db3b5a3" target="_blank">传送门</a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section class="cid-qTkAaeaxX5 mbr-reveal" id="footer1-2">
+        <div class="container">
+            <div class="media-container-row content text-white">
+                <div class="col-12 col-md-3">
+                    <div class="media-figure">
+                      <img src="assets/images/WeChat_QRCode.png" alt="微信公众号" title="">
+                      <br>
+                      <br>
+                      <div align="middle">
+                      <table><tr>
+                        <td><p class="mbr-text mbr-fonts-style display-7"><b>&nbsp&nbsp</b></td>
+                        <td><a href="https://www.linkedin.com/in/chenyankai/" target="_blank"><img src="assets/images/icon_Linkedin.png" alt="领英" title="" style="width: 80%;"></a></td>
+                        <td><p class="mbr-text mbr-fonts-style display-7"><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b></td>
+                        <td><a href="https://space.bilibili.com/32167722" target="_blank"><img src="assets/images/icon_BiliBili.png" alt="哔哩哔哩" title="" style="width: 80%;"></a></td>
+                        <td><p class="mbr-text mbr-fonts-style display-7"><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b></td>
+                        <td><a href="https://www.zhihu.com/people/chen-yan-kai-40-83" target="_blank"><img src="assets/images/icon_ZhiHu.png" alt="知乎" title="" style="width: 80%;"></a></td>
+                        </tr></table>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3 mbr-fonts-style display-7">
+                    <h5 class="pb-3">
+                    <b>联系地址</b>
+                </h5>
+                    <p class="mbr-text">江苏省南京市栖霞区
+                      <br>仙林大道163号南京大学仙林校区
+                      <br>计算机科学技术楼106室
+                      <br>邮编：210023
+                    </p>
+                </div>
+                <div class="col-12 col-md-3 mbr-fonts-style display-7">
+                    <h5 class="pb-3">
+                      <b>版权信息</b>
+                </h5>
+                    <p class="mbr-text">
+                        © 2022 陈彦恺 @ 南京大学
+                        <br>版权所有
+                        <br>保留一切权利
+                        <br>部分图片来源于网络，在此致谢
+                    </p>
+                </div>
+                <div class="col-12 col-md-3 mbr-fonts-style display-7">
+                    <h5 class="pb-3">
+                      (๑•̀ㅂ•́)و✧
+                    </h5>
+                    <p class="mbr-text">
+                      <b>本站最近更新日期</b>
+                      <br>2022年03月18日 星期五
+                      <br><b>本站累计访问量</b>
+                      <br><img src="https://www.mfwztj.com/hit.php?id=zuxnxk&nd=6&style=5" border="0" alt="计数器">
+                    </p>
+                </div>
+                <div class="col-12 col-md-1">
+                  <h5 class="pb-3">
+                    Github
+                  </h5>
+                  <div class="media-figure">
+                    <a href="https://www.github.com/chenyankai/chenyankai.github.io" target="_blank"><img src="assets/images/icon_Github.png" alt="Github" title=""></a>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="music" key="62235d3e75a3d" api="https://music.caojiefeng.com"></div>
+    <script id="xplayer" src="https://music.caojiefeng.com/api/PlayerJs/id/62235d3e75a3d" ></script>
+
+</body>
+
+</html>

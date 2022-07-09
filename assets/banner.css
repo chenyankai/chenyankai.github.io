@@ -1,0 +1,23 @@
+
+/* id选择器 */
+#hr1 {
+  background-color: cadetblue;
+  height: 2px;
+  width: 75%;
+}
+
+/* 类选择器 */
+.imgbox {
+  border-top: 5px solid cadetblue;
+  /* 避免因窗口变化影响图片效果 */
+  width: 60%;
+  height: 40%;
+  margin: 0 auto;
+}
+
+.img {
+  width: 60%;
+  height: 40%;
+  margin: 0 auto;
+  display: none;
+}
