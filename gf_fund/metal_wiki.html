@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>广发品质优选混合A (018220) · 基金Wiki</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f0f4f8;
+            font-family: 'Segoe UI', 'Roboto', 'Inter', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+            line-height: 1.5;
+            color: #1a2c3e;
+            padding: 2rem 1rem;
+        }
+
+        /* wiki容器：类似知识库卡片 */
+        .wiki-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+
+        /* 页眉品牌区 */
+        .wiki-header {
+            background: linear-gradient(135deg, #0b2b3b 0%, #123e4e 100%);
+            padding: 1.8rem 2.2rem;
+            color: white;
+            border-bottom: 1px solid #2c5a6e;
+        }
+
+        .wiki-header h1 {
+            font-size: 1.9rem;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .wiki-header .fund-code {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(4px);
+            font-size: 1rem;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            font-weight: 500;
+            font-family: monospace;
+        }
+
+        .wiki-header .sub {
+            margin-top: 0.65rem;
+            opacity: 0.8;
+            font-size: 0.9rem;
+            border-left: 3px solid #f5b042;
+            padding-left: 1rem;
+        }
+
+        /* 内容主体 */
+        .wiki-content {
+            padding: 2rem 2rem 2.5rem 2rem;
+        }
+
+        /* 信息模块样式 */
+        .info-section {
+            margin-bottom: 2.5rem;
+            border-radius: 24px;
+            background: #ffffff;
+            transition: box-shadow 0.2s;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #e9b13b;
+            display: inline-block;
+            letter-spacing: -0.2px;
+            color: #0b2b3b;
+        }
+
+        .section-subnote {
+            font-size: 0.8rem;
+            color: #5e6f8d;
+            margin-top: -0.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        /* 表格设计 响应式滚动 */
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 18px;
+            border: 1px solid #e6edf2;
+            background: #fff;
+            margin: 1rem 0 1.2rem 0;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            min-width: 500px;
+        }
+
+        .data-table th {
+            background: #f1f6fa;
+            padding: 0.9rem 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #1f3b4a;
+            border-bottom: 1px solid #dce5ec;
+        }
+
+        .data-table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #eef2f6;
+            vertical-align: top;
+            color: #1f2f3e;
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .highlight-badge {
+            background: #eef6e8;
+            color: #2b6e3c;
+            padding: 0.2rem 0.5rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        .stats-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0 1rem 0;
+        }
+
+        .stat-card {
+            background: #f9fbfd;
+            border-radius: 20px;
+            padding: 1rem 1.3rem;
+            flex: 1 1 200px;
+            border: 1px solid #e2edf2;
+            transition: 0.1s;
+        }
+
+        .stat-card .stat-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #5c7a8c;
+        }
+
+        .stat-card .stat-number {
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: #1b4e6e;
+            line-height: 1.2;
+            margin-top: 8px;
+        }
+
+        .comparison-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .comp-card {
+            flex: 1;
+            min-width: 220px;
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid #e0ecf2;
+            padding: 1.2rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .comp-card h4 {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #0b2b3b;
+        }
+
+        .adv-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .adv-list li {
+            margin-bottom: 0.65rem;
+            padding-left: 1.4rem;
+            position: relative;
+        }
+
+        .adv-list li::before {
+            content: "✓";
+            color: #e9b13b;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .risk-note {
+            background: #fff6ea;
+            border-left: 5px solid #e9b13b;
+            padding: 1rem 1.3rem;
+            border-radius: 16px;
+            margin: 1rem 0;
+            font-size: 0.85rem;
+        }
+
+        .footnote {
+            font-size: 0.75rem;
+            color: #6c86a3;
+            border-top: 1px solid #e2ecf3;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            text-align: center;
+        }
+
+        @media (max-width: 700px) {
+            .wiki-content {
+                padding: 1.2rem;
+            }
+            .wiki-header h1 {
+                font-size: 1.5rem;
+            }
+            .section-title {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="wiki-container">
+    <div class="wiki-header">
+        <h1>
+            📈 广发品质优选混合型发起式证券投资基金 (A类)
+            <span class="fund-code">018220</span>
+        </h1>
+        <div class="sub">
+            🌍 资源安全 + AI硬件上游双轮驱动 | 主动偏股混合型 | 成立日：2024年6月27日
+        </div>
+    </div>
+    <div class="wiki-content">
+        
+        <!-- 基础产品信息与业绩表现 -->
+        <div class="info-section">
+            <div class="section-title">📊 基础数据 & 业绩表现</div>
+            <div class="section-subnote">数据截至2026年4月21日，基于基金年报/季报及公开业绩快报</div>
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <tr><th style="width:35%">项目</th><th>内容</th></tr>
+                    <tr><td>基金全称</td><td>广发品质优选混合型发起式证券投资基金（A类）</td></tr>
+                    <tr><td>基金代码 / 成立日期</td><td>018220 · 2024年6月27日</td></tr>
+                    <tr><td>投资类型 / 风险等级</td><td>偏股混合型（主动管理） / R3（中高风险）</td></tr>
+                    <tr><td>基金管理人 / 基金经理</td><td>广发基金管理有限公司 · 罗洋（自成立起管理）</td></tr>
+                    <tr><td>最新规模</td><td>0.29亿元（2,900万元，截至2026年4月17日）；2025年末为2437.8万元</td></tr>
+                    <tr><td>基金份额总额（A类）</td><td>15,796,552.58份（2025-12-31）</td></tr>
+                    <tr><td>成立以来收益率</td><td><strong class="highlight-badge" style="background:#e2f0e6;">+92.37%</strong> (截至2026/4/17)</td></tr>
+                    <tr><td>近1年收益率</td><td>+83.61% <span style="color:#4b6b3e;">(同类偏股混合平均：+46.48%)</span></td></tr>
+                    <tr><td>2025年全年收益率</td><td>+64.83% (跑赢沪深300约49个百分点)</td></tr>
+                    <tr><td>最大回撤（成立以来）</td><td>-24.58% (发生于2026年一季度)</td></tr>
+                    <tr><td>夏普比率（成立以来）</td><td>1.8238 (截至2026/3/27)</td></tr>
+                    <tr><td>正收益概率</td><td>持有满6个月盈利概率≈78%；持有满1年达100%（历史较短）</td></tr>
+                    <tr><td>跑赢上证指数</td><td>2025年：+64.83% vs 上证+8.12% ; 2026年至今：+18.97% vs 上证+4.2%</td></tr>
+                    <tr><td>目标人群</td><td>C4及以上、看好资源+科技主线、能接受短期波动、建议持有期≥1年</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- 申购赎回费用与交易规则 -->
+        <div class="info-section">
+            <div class="section-title">💰 费率结构与交易规则</div>
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <tr><th style="width:35%">项目</th><th>详情</th></tr>
+                    <tr><td>申购费（A类）</td><td>金额＜100万：1.50% (折后0.15%)；100万-500万：1.00% (折后0.10%)；≥500万：1000元/笔</td></tr>
+                    <tr><td>赎回费（A类）</td><td>持有＜7天：1.50% ；7天≤持有＜30天：0.75% ；30天≤持有＜180天：0.50% ；持有≥180天：0%</td></tr>
+                    <tr><td>管理费 / 托管费</td><td>1.20%/年 · 0.20%/年</td></tr>
+                    <tr><td>销售服务费</td><td>A类不收取，C类(018221) 0.40%/年</td></tr>
+                    <tr><td>交易渠道</td><td>银行、券商、天天基金、蚂蚁财富、广发基金APP等</td></tr>
+                    <tr><td>确认日 / 赎回到账</td><td>T+1确认份额；赎回到账一般T+3~T+4工作日</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- 与同类基金对比及优势 -->
+        <div class="info-section">
+            <div class="section-title">📈 同类对比 & 核心优势</div>
+            <div class="comparison-grid">
+                <div class="comp-card">
+                    <h4>🏆 广发品质优选混合A</h4>
+                    <div>近1年收益：<strong>+83.61%</strong></div>
+                    <div>2025年收益：<strong>+64.83%</strong></div>
+                    <div>成立以来最大回撤：<strong>-24.58%</strong></div>
+                    <div>股票仓位(2025末)：<strong>69.47%</strong></div>
+                    <div>换手率(2025年)：<strong>445.23%</strong></div>
+                    <div>规模：<strong>0.29亿元</strong></div>
+                </div>
+                <div class="comp-card">
+                    <h4>📊 同类平均（偏股混合型）</h4>
+                    <div>近1年平均：+46.48%</div>
+                    <div>2025年平均：+32.66%</div>
+                    <div>最大回撤估算：-28.3%</div>
+                    <div>平均仓位：≈84.04%</div>
+                    <div>同类换手率：＞600%</div>
+                    <div>规模中位数：≈3亿元</div>
+                </div>
+            </div>
+            <ul class="adv-list" style="margin-top: 0.8rem;">
+                <li><strong>低仓位高收益</strong> – 平均仓位仅69.5%，收益大幅领先同类，凸显选股与风控能力。</li>
+                <li><strong>低换手稳持仓</strong> – 445%换手率低于同业，减少交易损耗，聚焦优质龙头。</li>
+                <li><strong>聚焦高确定性赛道</strong> – 黄金、铜、铝等资源品，受益全球“去美元化+再通胀”。</li>
+                <li><strong>基金经理履历扎实</strong> – 罗洋管理的多只基金近一年均为正收益，本产品为代表作。</li>
+                <li><strong>差异化定位</strong> – “资源安全+AI硬件上游”双轮驱动，强调高ROE+强定价权稀缺资产。</li>
+            </ul>
+        </div>
+
+        <!-- 前十重仓股及行业覆盖 -->
+        <div class="info-section">
+            <div class="section-title">📦 成分覆盖 & 前十大重仓股</div>
+            <div class="section-subnote">截至2025年12月31日（四季报），合计持仓占比超50%</div>
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <tr><th>排名</th><th>股票名称</th><th>占基金净值比例</th><th>所属品类</th></tr>
+                    <tr><td>1</td><td>中国黄金国际</td><td>9.87%</td><td>黄金/贵金属</td></tr>
+                    <tr><td>2</td><td>紫金矿业</td><td>7.96%</td><td>黄金+铜</td></tr>
+                    <tr><td>3</td><td>中金黄金</td><td>5.73%</td><td>黄金</td></tr>
+                    <tr><td>4</td><td>洛阳钼业</td><td>4.65%</td><td>铜钴/稀有金属</td></tr>
+                    <tr><td>5</td><td>招金黄金</td><td>4.53%</td><td>黄金</td></tr>
+                    <tr><td>6</td><td>华新建材</td><td>3.82%</td><td>建材/周期制造（或华新水泥）</td></tr>
+                    <tr><td>7</td><td>万国黄金集团</td><td>3.51%</td><td>黄金矿业</td></tr>
+                    <tr><td>8</td><td>江西铜业股份</td><td>3.24%</td><td>铜</td></tr>
+                    <tr><td>9</td><td>云铝股份</td><td>3.07%</td><td>铝（水电铝）</td></tr>
+                    <tr><td>10</td><td>赤峰黄金</td><td>2.98%</td><td>黄金</td></tr>
+                </table>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-label">主要覆盖品类</div><div class="stat-number">黄金 · 铜 · 铝 · 稀有金属</div><div style="font-size:0.8rem; margin-top:6px;">贵金属+工业金属+周期制造</div></div>
+                <div class="stat-card"><div class="stat-label">资源集中度</div><div class="stat-number">＞50%</div><div style="font-size:0.8rem;">前十重仓聚焦资源龙头</div></div>
+            </div>
+        </div>
+
+        <!-- 细分行业供需逻辑 + 调仓逻辑 -->
+        <div class="info-section">
+            <div class="section-title">⚙️ 重点标的行业逻辑 & 近期调仓</div>
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <tr><th style="width:25%">细分品种</th><th>供给/需求核心驱动</th><th>代表持仓</th></tr>
+                    <tr><td>🥇 黄金</td><td>全球金矿品位下降+央行持续购金(2025年全球净买入1136吨)+地缘避险+去美元化，金价创历史新高</td><td>紫金矿业、中金黄金、招金黄金、赤峰黄金</td></tr>
+                    <tr><td>🔴 铜</td><td>矿山老化资本开支不足；电网投资/新能源车/AI数据中心用铜需求爆发；LME库存5年低位</td><td>紫金矿业、江西铜业、洛阳钼业</td></tr>
+                    <tr><td>🟡 铝</td><td>水电铝绿色溢价符合欧盟CBAM；光伏支架、电池壳体、轻量化车身需求高增</td><td>云铝股份</td></tr>
+                </table>
+            </div>
+            <div class="risk-note">
+                <strong>🔄 近期调仓逻辑（2025Q4—2026Q1）</strong><br>
+                • 加仓黄金股：提前布局美联储降息预期升温。<br>
+                • 维持铜铝敞口：看好国内“大规模设备更新”政策对工业金属拉动。<br>
+                • 降低消费股比例：实际持仓以资源为核心，体现“守正出奇”——资源为底仓，灵活捕捉机会。
+            </div>
+        </div>
+
+        <!-- 季度调仓方法 & 主动管理框架 -->
+        <div class="info-section">
+            <div class="section-title">📐 调仓方法论 · 主动管理框架</div>
+            <p style="margin-bottom: 0.75rem;">基金经理采用 <strong>“自上而下+自下而上”</strong> 策略，动态调整股债比例与行业结构：</p>
+            <ul class="adv-list" style="margin-bottom: 0.5rem;">
+                <li><strong>大类资产配置</strong> – 2025年Q3仓位达85.77%，Q4回落至约70%，灵活择时。</li>
+                <li><strong>行业均衡超配资源</strong> – 保持消费/科技/周期均衡，但实际超配“全球秩序重构”主线（黄金/有色）。</li>
+                <li><strong>个股筛选标准</strong> – 高ROE（如紫金矿业ROE>20%）、强现金流、资源储量壁垒、政策受益（黄金国企整合）。</li>
+                <li><strong>低换手买入持有</strong> – 全年换手445%远低于同业，核心是买入并持有优质资源龙头。</li>
+            </ul>
+            <div class="risk-note" style="background:#eef3fc; border-left-color:#2c7da0;">
+                📌 基金经理在2025年报中表示：“在全球秩序重构、去美元化的背景下，看好关键资源品如黄金、有色金属、石油等。”
+            </div>
+        </div>
+
+        <!-- 总结与风险提示 -->
+        <div class="info-section">
+            <div class="section-title">📌 产品总结 & 风险提示</div>
+            <p><strong>广发品质优选混合（018220）</strong>是一只以“战略资源”为核心、兼顾科技与消费的主动混合基金。凭借对黄金与工业金属的前瞻布局，2025-2026年实现显著超额收益，核心特质：</p>
+            <ul class="adv-list" style="margin: 0.5rem 0 1rem 0;">
+                <li>✅ 低仓位 · 高收益 · 低换手</li>
+                <li>✅ 聚焦具备定价权的稀缺资源企业</li>
+                <li>✅ 适合长期看好“实物资产重估”逻辑的投资者</li>
+            </ul>
+            <div class="risk-note" style="background:#fff2f0; border-left-color:#d9534f;">
+                <strong>⚠️ 重要风险警示</strong><br>
+                • 基金规模较小（＜0.3亿元），存在清盘风险；<br>
+                • 重仓单一行业（有色+黄金），净值波动较大，短期回撤可能超出一般混合基金；<br>
+                • 过往业绩不预示未来表现，请投资者充分评估自身风险承受能力C4及以上。
+            </div>
+        </div>
+
+        <div class="footnote">
+            📄 数据来源：广发基金基金合同生效公告(2024.6.28)、2024年报(2025.3.27)、2025年四季报(2026.1.21)、2025年业绩快报(东方财富网2026.4.9)、天天基金/Wind/晨星。
+            <br><b>© 广发基金×港中深“营销新势力创变营”</b>
+            <br>风险提示：本材料中的信息或表述意见为大学生实习实践材料，不代表广发基金管理有限公司的观点，仅供参考，不构成承诺、要约、要约邀请，也不构成对任何人的投资建议。
+            <br>基金过往业绩并不预示其未来表现，基金经理管理的其他产品业绩并不构成对本基金业绩的保证，基金有风险，投资需谨慎。
+            <br>基金管理人承诺以诚实信用、勤勉尽职的原则管理和运用基金资产但不保证基金一定盈利，也不保证最低收益。
+            <br>投资人购买基金时应详细阅读基金的基金合同和招募说明书等法律文件。基金管理人管理的其他基金业绩和其投资人员取得的过往业绩不预示其未来表现。投资需谨慎。
+        </div>
+    </div>
+</div>
+</body>
+</html>
