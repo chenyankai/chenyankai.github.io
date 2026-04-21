@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>卫星ETF广发 (512630) · 商业航天上游ETF Wiki</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #eef2f8;
+            font-family: 'Segoe UI', 'Roboto', 'Inter', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+            line-height: 1.5;
+            color: #1a2c3e;
+            padding: 2rem 1rem;
+        }
+
+        .wiki-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.12);
+            overflow: hidden;
+        }
+
+        .wiki-header {
+            background: linear-gradient(135deg, #0B2F4A 0%, #1C4E6E 100%);
+            padding: 1.8rem 2.2rem;
+            color: white;
+            border-bottom: 1px solid #2c6f8f;
+        }
+
+        .wiki-header h1 {
+            font-size: 1.9rem;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .wiki-header .fund-code {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(4px);
+            font-size: 1rem;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            font-family: monospace;
+            font-weight: 500;
+        }
+
+        .wiki-header .sub {
+            margin-top: 0.65rem;
+            opacity: 0.85;
+            font-size: 0.9rem;
+            border-left: 3px solid #ffbc6e;
+            padding-left: 1rem;
+        }
+
+        .wiki-content {
+            padding: 2rem 2rem 2.5rem 2rem;
+        }
+
+        .info-section {
+            margin-bottom: 2.5rem;
+            border-radius: 24px;
+            background: #ffffff;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #ffbc6e;
+            display: inline-block;
+            letter-spacing: -0.2px;
+            color: #0B2F4A;
+        }
+
+        .section-subnote {
+            font-size: 0.8rem;
+            color: #5e6f8d;
+            margin-top: -0.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 18px;
+            border: 1px solid #e2edf2;
+            background: #fff;
+            margin: 1rem 0 1.2rem 0;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            min-width: 500px;
+        }
+
+        .data-table th {
+            background: #f4f9fe;
+            padding: 0.9rem 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #1f4a6e;
+            border-bottom: 1px solid #dce5ec;
+        }
+
+        .data-table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #eef2f6;
+            vertical-align: top;
+            color: #1f2f3e;
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .highlight-badge {
+            background: #e2f0ea;
+            color: #1f6e5c;
+            padding: 0.2rem 0.6rem;
+            border-radius: 24px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .stats-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0 1rem 0;
+        }
+
+        .stat-card {
+            background: #f9fbfd;
+            border-radius: 20px;
+            padding: 1rem 1.3rem;
+            flex: 1 1 200px;
+            border: 1px solid #e2edf2;
+        }
+
+        .stat-card .stat-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #5c7a8c;
+        }
+
+        .stat-card .stat-number {
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: #1b6b5c;
+            line-height: 1.2;
+            margin-top: 8px;
+        }
+
+        .comparison-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .comp-card {
+            flex: 1;
+            min-width: 180px;
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid #e0ecf2;
+            padding: 1.2rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .comp-card h4 {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #0B2F4A;
+        }
+
+        .adv-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .adv-list li {
+            margin-bottom: 0.65rem;
+            padding-left: 1.4rem;
+            position: relative;
+        }
+
+        .adv-list li::before {
+            content: "✓";
+            color: #ffbc6e;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .logic-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 1rem 0;
+        }
+
+        .logic-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.8rem;
+            position: relative;
+        }
+
+        .logic-list li strong {
+            color: #1C4E6E;
+        }
+
+        .logic-list li::before {
+            content: "🛰️";
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .risk-note {
+            background: #fff6ea;
+            border-left: 5px solid #ffbc6e;
+            padding: 1rem 1.3rem;
+            border-radius: 16px;
+            margin: 1rem 0;
+            font-size: 0.85rem;
+        }
+
+        .footnote {
+            font-size: 0.75rem;
+            color: #6c86a3;
+            border-top: 1px solid #e2ecf3;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            text-align: center;
+        }
+
+        @media (max-width: 700px) {
+            .wiki-content {
+                padding: 1.2rem;
+            }
+            .wiki-header h1 {
+                font-size: 1.5rem;
+            }
+            .section-title {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="wiki-container">
+    <div class="wiki-header">
+        <h1>
+            🛸 卫星ETF广发 (中证卫星产业ETF)
+            <span class="fund-code">512630</span>
+        </h1>
+        <div class="sub">
+            📡 聚焦卫星制造+火箭发射 | 中证卫星产业指数 | 商业航天上游核心工具
+        </div>
+    </div>
+    <div class="wiki-content">
+
+        <!-- 一、基础产品信息与业绩表现 -->
+        <div class="info-section">
+            <div class="section-title">📊 基础数据 & 业绩表现</div>
+            <div class="section-subnote">数据截至2026年4月20日，来源：基金公告、天天基金、Wind</div>
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <tr><th style="width:35%">项目</th><th>内容</th></tr>
+                    <tr><td>基金全称</td><td>广发中证卫星产业交易型开放式指数证券投资基金 (卫星ETF广发)</td></tr>
+                    <tr><td>基金代码 / 成立时间</td><td>512630 · 2025年10月13日</td></tr>
+                    <tr><td>跟踪指数</td><td>中证卫星产业指数 (931237)</td></tr>
+                    <tr><td>风险等级 / 基金经理</td><td>高风险 (R4) · 吕鑫</td></tr>
+                    <tr><td>基金规模</td><td><strong>7.10亿元</strong> (截至2026/4/20)</td></tr>
+                    <tr><td>成立以来收益率</td><td><span class="highlight-badge" style="background:#e2f0ea;">+58.53%</span> (截至2026/4/20)</td></tr>
+                    <tr><td>近半年收益率</td><td>+62.75% <span style="color:#4b6b3e;">(显著高于同类平均9.09%)</span></td></tr>
+                    <tr><td>近一周收益率</td><td>+12.33% (同类排名 2/4985)</td></tr>
+                    <tr><td>目标人群提示</td><td>C4及以上、看好商业航天批量化发射与卫星互联网、能承受高波动、建议持有期≥1年</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- 二、费率与交易规则 (ETF通用) -->
+        <div class="info-section">
+            <div class="section-title">💰 费率结构与交易规则</div>
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <tr><th style="width:35%">项目</th><th>详情</th></tr>
+                    <tr><td>申购方式</td><td>场内ETF：通过证券账户像股票一样买卖 (代码512630)；可进行一级市场申赎(最小申赎单位需查询基金公告)</td></tr>
+                    <tr><td>交易佣金</td><td>券商收取，通常万0.5~万1.5，免印花税</td></tr>
+                    <tr><td>最小交易单位</td><td>1手 = 100份</td></tr>
+                    <tr><td>管理费率+托管费率</td><td>0.50% + 0.10% = 0.60%/年 (被动指数型标准)</td></tr>
+                    <tr><td>净值披露</td><td>交易日公布IOPV实时参考净值及收盘单位净值</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- 三、竞品对比 & 核心优势 -->
+        <div class="info-section">
+            <div class="section-title">📡 同类卫星ETF对比 & 本品优势</div>
+            <div class="comparison-grid">
+                <div class="comp-card">
+                    <h4>🚀 卫星ETF广发 (512630)</h4>
+                    <div>规模：<strong>7.10亿元</strong></div>
+                    <div>成立以来收益：+58.53%</div>
+                    <div>近半年收益：+62.75%</div>
+                    <div>风格：更聚焦<strong>卫星制造+火箭发射</strong>上游环节</div>
+                </div>
+                <div class="comp-card">
+                    <h4>招商中证卫星产业ETF</h4>
+                    <div>规模：15.31亿元</div>
+                    <div>成立时间较早，权重分布较均衡</div>
+                    <div>跟踪相同指数，业绩趋同但规模流动性有差异</div>
+                </div>
+                <div class="comp-card">
+                    <h4>富国/易方达同类ETF</h4>
+                    <div>规模相对较小，流动性略逊</div>
+                    <div>广发产品在近期动量与排名上表现突出(近一周同类第2)</div>
+                </div>
+            </div>
+            <ul class="adv-list" style="margin-top: 1rem;">
+                <li><strong>聚焦卫星产业上游制造+发射</strong> – 更精准捕捉“批量交付+可回收火箭”产业化节点。</li>
+                <li><strong>业绩爆发力强</strong> – 成立不足一年收益率超58%，近半年收益超62%，领跑同类。</li>
+                <li><strong>流动性改善明显</strong> – 规模7.1亿，日均成交活跃，适合机构及个人配置。</li>
+                <li><strong>指数化降低个股风险</strong> – 卫星产业尚处早期，个股波动极大，ETF分散持仓保留赛道β。</li>
+            </ul>
+        </div>
+
+        <!-- 四、成分股覆盖与前十大重仓股 (指数亮点) -->
+        <div class="info-section">
+            <div class="section-title">📦 指数成分覆盖 & 核心权重股</div>
+            <div class="section-subnote">中证卫星产业指数 (931237) 更聚焦卫星制造与发射环节，数据基于指数编制方案及最新权重分布</div>
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <tr><th>代表股票</th><th>所属环节</th><th>业务亮点</th></tr>
+                    <tr><td>中国卫星</td><td>卫星制造</td><td>航天科技集团核心上市平台，小卫星及微小卫星龙头</td></tr>
+                    <tr><td>航天电子</td><td>火箭配套/电子</td><td>航天电子测控、惯导，受益于发射次数提升</td></tr>
+                    <tr><td>中国卫通</td><td>卫星运营</td><td>国内唯一拥有通信广播卫星资源的基础运营商</td></tr>
+                    <tr><td>中科星图</td><td>卫星应用/数字地球</td><td>数字地球平台，空天信息服务商</td></tr>
+                    <tr><td>臻镭科技</td><td>射频芯片</td><td>宇航级射频收发芯片，卫星载荷核心器件</td></tr>
+                    <tr><td>华测导航</td><td>北斗应用/地面设备</td><td>高精度导航定位，卫星数据接收终端</td></tr>
+                    <tr><td>北斗星通</td><td>导航芯片/位置服务</td><td>北斗产业链核心企业，卫星导航基础器件</td></tr>
+                    <tr><td>国博电子</td><td>有源相控阵T/R组件</td><td>军用及卫星通信T/R组件稀缺标的</td></tr>
+                </table>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-label">覆盖产业链</div><div class="stat-number">卫星制造→火箭发射→地面设备→数据应用</div><div style="font-size:0.7rem;">全链条，但上游制造权重最高</div></div>
+                <div class="stat-card"><div class="stat-label">指数定位</div><div class="stat-number">商业航天“硬科技”</div><div style="font-size:0.7rem;">聚焦订单兑现度高的环节</div></div>
+            </div>
+        </div>
+
+        <!-- 五、核心投资逻辑 (订单确定性+可回收火箭+ETF工具) -->
+        <div class="info-section">
+            <div class="section-title">⚡ 选品核心投资逻辑</div>
+            <div class="risk-note" style="background:#EFF7FC; border-left-color:#2C7DA0;">
+                <strong>🎯 逻辑一：订单可见性驱动业绩确定性</strong><br>
+                与多数成长主题“远期故事”不同，商业航天上游已进入实质订单释放期。中国星网、垣信卫星等两大国家级星座加速发射节奏，卫星制造端进入批量交付阶段。卫星制造、火箭发射企业业绩兑现路径清晰，利润表开始反映规模化红利。
+            </div>
+            <div class="risk-note" style="background:#F9F7F3; border-left-color:#ffbc6e;">
+                <strong>🚀 逻辑二：技术降本打开空间，可回收火箭是核心变量</strong><br>
+                发射成本是商业航天规模化的最大瓶颈。可回收火箭一旦进入商业化量产，发射成本有望降低60%-80%，将彻底改变产业链盈利模型。国内民营火箭公司（星际荣耀、蓝箭航天等）可回收试验持续推进，2026-2027年有望迎来技术拐点，催化全产业链估值。
+            </div>
+            <div class="risk-note" style="background:#F4F9F4; border-left-color:#3b8c6e;">
+                <strong>🛰️ 逻辑三：ETF是参与商业航天的最优工具</strong><br>
+                商业航天目前仍处于产业早期，头部企业尚未全部上市（如多家未上市民营火箭公司），个股风险极高。卫星产业ETF通过分散持仓覆盖卫星制造、火箭配套、应用服务等细分龙头，有效降低个股“踩雷”风险，同时完整保留赛道β收益。跟踪中证卫星产业指数的产品是捕捉“可回收火箭+批量化卫星+卫星互联网”三重趋势的高效工具。
+            </div>
+        </div>
+
+        <!-- 六、调仓机制 & 指数特点（指数定期调整） -->
+        <div class="info-section">
+            <div class="section-title">📐 指数调仓机制 · 卫星产业主题</div>
+            <p style="margin-bottom: 0.75rem;">本ETF所跟踪的<strong>中证卫星产业指数 (931237)</strong> 实行半年度/季度定期调整，确保成分股代表卫星产业链核心上市公司：</p>
+            <ul class="adv-list">
+                <li><strong>调整频率</strong> – 每半年一次（6月/12月），特殊情况下季度微调，保持产业代表性。</li>
+                <li><strong>选样范围</strong> – 卫星制造、卫星发射、地面设备、卫星运营及服务，优选日均市值与流动性前列。</li>
+                <li><strong>权重上限</strong> – 单只成分股权重不超过15%，避免过度集中。</li>
+                <li><strong>近期调仓趋势</strong> – 加大可回收火箭配套、相控阵天线、星载芯片等新锐公司权重，反映产业链向“低成本批产”方向演进。</li>
+            </ul>
+            <div class="risk-note" style="background:#f1f7fa; border-left-color:#4682b4;">
+                📌 数据来源：中证指数公司《中证卫星产业指数编制方案》。指数编制紧跟商业航天从“实验室”到“批量化生产”的产业升级路径。
+            </div>
+        </div>
+
+        <!-- 总结与风险提示 -->
+        <div class="info-section">
+            <div class="section-title">📌 产品总结 & 风险警示</div>
+            <p><strong>卫星ETF广发 (512630)</strong> 是国内首批聚焦卫星产业链上游制造的ETF工具，紧密跟踪中证卫星产业指数。产品成立于商业航天大规模发射前夜，凭借订单驱动业绩 + 可回收火箭降本预期 + 指数化分散风险三大优势，成为布局中国版“星链”的便捷选择。</p>
+            <ul class="adv-list" style="margin: 0.8rem 0 1rem 0;">
+                <li>✅ 聚焦高确定性环节：卫星制造+火箭发射，订单可见性强</li>
+                <li>✅ 受益于可回收火箭技术突破，产业链成本下行空间巨大</li>
+                <li>✅ ETF工具属性突出，避免单一选股风险，保留赛道弹性</li>
+                <li>✅ 成立以来收益率超58%，近半年收益领跑同类</li>
+            </ul>
+            <div class="risk-note" style="background:#fff2f0; border-left-color:#d9534f;">
+                <strong>⚠️ 重要风险提示</strong><br>
+                • 卫星产业属高风险高波动主题，历史回撤可能较大，单一产业集中度高。<br>
+                • 商业航天政策及发射进度存在不确定性，发射失败或星座建设延期可能导致板块调整。<br>
+                • 基金规模7.1亿元，流动性良好但仍需注意大额申赎冲击。<br>
+                • 过往业绩不预示未来表现，请投资者根据自身风险承受能力（C4及以上）审慎决策。
+            </div>
+        </div>
+
+        <div class="footnote">
+            <b>© 广发基金×港中深“营销新势力创变营”</b>
+            <br>📄数据来源：广发基金基金合同生效公告(2024.6.28)、2024年报(2025.3.27)、2025年四季报(2026.1.21)、2025年业绩快报(东方财富网2026.4.9)、天天基金/Wind/晨星。
+            <br>风险提示：本材料中的信息或表述意见为大学生实习实践材料，不代表广发基金管理有限公司的观点，仅供参考，不构成承诺、要约、要约邀请，也不构成对任何人的投资建议。
+            <br>基金过往业绩并不预示其未来表现，基金经理管理的其他产品业绩并不构成对本基金业绩的保证，基金有风险，投资需谨慎。
+            <br>基金管理人承诺以诚实信用、勤勉尽职的原则管理和运用基金资产但不保证基金一定盈利，也不保证最低收益。
+            <br>投资人购买基金时应详细阅读基金的基金合同和招募说明书等法律文件。基金管理人管理的其他基金业绩和其投资人员取得的过往业绩不预示其未来表现。投资需谨慎。
+        </div>
+    </div>
+</div>
+</body>
+</html>
