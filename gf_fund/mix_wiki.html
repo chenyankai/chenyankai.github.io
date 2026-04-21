@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>广发招利混合A (015838) · 商业航天主动基金Wiki</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f0f4f9;
+            font-family: 'Segoe UI', 'Roboto', 'Inter', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+            line-height: 1.5;
+            color: #1a2c3e;
+            padding: 2rem 1rem;
+        }
+
+        .wiki-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.12);
+            overflow: hidden;
+        }
+
+        .wiki-header {
+            background: linear-gradient(135deg, #1E3A5F 0%, #2A5A7A 100%);
+            padding: 1.8rem 2.2rem;
+            color: white;
+            border-bottom: 1px solid #3C7A9E;
+        }
+
+        .wiki-header h1 {
+            font-size: 1.9rem;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .wiki-header .fund-code {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(4px);
+            font-size: 1rem;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            font-family: monospace;
+            font-weight: 500;
+        }
+
+        .wiki-header .sub {
+            margin-top: 0.65rem;
+            opacity: 0.85;
+            font-size: 0.9rem;
+            border-left: 3px solid #FFB347;
+            padding-left: 1rem;
+        }
+
+        .wiki-content {
+            padding: 2rem 2rem 2.5rem 2rem;
+        }
+
+        .info-section {
+            margin-bottom: 2.5rem;
+            border-radius: 24px;
+            background: #ffffff;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #FFB347;
+            display: inline-block;
+            letter-spacing: -0.2px;
+            color: #1E3A5F;
+        }
+
+        .section-subnote {
+            font-size: 0.8rem;
+            color: #5e6f8d;
+            margin-top: -0.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 18px;
+            border: 1px solid #e2edf2;
+            background: #fff;
+            margin: 1rem 0 1.2rem 0;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            min-width: 500px;
+        }
+
+        .data-table th {
+            background: #f4f9fe;
+            padding: 0.9rem 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #1f4a6e;
+            border-bottom: 1px solid #dce5ec;
+        }
+
+        .data-table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #eef2f6;
+            vertical-align: top;
+            color: #1f2f3e;
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .highlight-badge {
+            background: #E2F0EA;
+            color: #1F6E5C;
+            padding: 0.2rem 0.6rem;
+            border-radius: 24px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .stats-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0 1rem 0;
+        }
+
+        .stat-card {
+            background: #f9fbfd;
+            border-radius: 20px;
+            padding: 1rem 1.3rem;
+            flex: 1 1 200px;
+            border: 1px solid #e2edf2;
+        }
+
+        .stat-card .stat-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #5c7a8c;
+        }
+
+        .stat-card .stat-number {
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: #1b6b5c;
+            line-height: 1.2;
+            margin-top: 8px;
+        }
+
+        .adv-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .adv-list li {
+            margin-bottom: 0.65rem;
+            padding-left: 1.4rem;
+            position: relative;
+        }
+
+        .adv-list li::before {
+            content: "✓";
+            color: #FFB347;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .logic-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 1rem 0;
+        }
+
+        .logic-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.8rem;
+            position: relative;
+        }
+
+        .logic-list li strong {
+            color: #1E3A5F;
+        }
+
+        .logic-list li::before {
+            content: "🚀";
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .manager-quote {
+            background: #F4F9F4;
+            border-left: 5px solid #FFB347;
+            padding: 1rem 1.3rem;
+            border-radius: 16px;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #2c5a6e;
+        }
+
+        .risk-note {
+            background: #fff6ea;
+            border-left: 5px solid #FFB347;
+            padding: 1rem 1.3rem;
+            border-radius: 16px;
+            margin: 1rem 0;
+            font-size: 0.85rem;
+        }
+
+        .footnote {
+            font-size: 0.75rem;
+            color: #6c86a3;
+            border-top: 1px solid #e2ecf3;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            text-align: center;
+        }
+
+        @media (max-width: 700px) {
+            .wiki-content {
+                padding: 1.2rem;
+            }
+            .wiki-header h1 {
+                font-size: 1.5rem;
+            }
+            .section-title {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="wiki-container">
+    <div class="wiki-header">
+        <h1>
+            📡 广发招利混合型证券投资基金 A类
+            <span class="fund-code">015838</span>
+        </h1>
+        <div class="sub">
+            🛰️ 主动掘金商业航天“奇点” | 基金经理段涛 | 沿产业链从火箭端→卫星端→应用端依次布局
+        </div>
+    </div>
+    <div class="wiki-content">
+
+        <!-- 一、基础产品信息与业绩表现 -->
+        <div class="info-section">
+            <div class="section-title">📊 基础数据 & 业绩表现</div>
+            <div class="section-subnote">数据截至2026年4月20日，来源：基金季报/年报、天天基金</div>
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <tr><th style="width:35%">项目</th><th>内容</th></tr>
+                    <tr><td>基金全称</td><td>广发招利混合型证券投资基金 A类</td></tr>
+                    <tr><td>基金代码 / 成立时间</td><td>015838 · 2022年9月20日</td></tr>
+                    <tr><td>投资类型 / 风险等级</td><td>偏股混合型（主动管理） / R3中高风险</td></tr>
+                    <tr><td>基金管理人 / 基金经理</td><td>广发基金管理有限公司 · 段涛（自成立起管理）</td></tr>
+                    <tr><td>最新规模</td><td><strong>0.42亿元</strong>（截至2026/4/20）</td></tr>
+                    <tr><td>成立以来收益率</td><td><span class="highlight-badge">+34.45%</span>（截至2026/4/20）</td></tr>
+                    <tr><td>近1年收益率</td><td>+67.96% <span style="color:#4b6b3e;">（显著高于同类偏股混合平均44.49%）</span></td></tr>
+                    <tr><td>近一周收益率</td><td>+15.76% <span style="color:#4b6b3e;">（同类排名 5/5132）</span></td></tr>
+                    <tr><td>目标人群提示</td><td>C3及以上、认同商业航天长逻辑、能接受中小规模基金的波动、建议持有期≥1年</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- 二、申购赎回费用与交易规则（偏股混合型） -->
+        <div class="info-section">
+            <div class="section-title">💰 费率结构与交易规则</div>
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <tr><th style="width:35%">项目</th><th>详情</th></tr>
+                    <tr><td>申购费（A类）</td><td>金额＜100万：1.50% (折后0.15%)；100万-500万：1.00% (折后0.10%)；≥500万：1000元/笔</td></tr>
+                    <tr><td>赎回费（A类）</td><td>持有＜7天：1.50% ；7天≤持有＜30天：0.75% ；30天≤持有＜180天：0.50% ；持有≥180天：0%</td></tr>
+                    <tr><td>管理费 / 托管费</td><td>1.20%/年 · 0.20%/年</td></tr>
+                    <tr><td>销售服务费</td><td>A类不收取，C类(015839) 0.40%/年</td></tr>
+                    <tr><td>交易渠道</td><td>银行、券商、天天基金、蚂蚁财富、广发基金APP等</td></tr>
+                    <tr><td>确认日 / 赎回到账</td><td>T+1确认份额；赎回到账一般T+3~T+4工作日</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- 三、基金经理画像与投资逻辑 -->
+        <div class="info-section">
+            <div class="section-title">🧑‍🚀 基金经理画像 · 段涛</div>
+            <div class="manager-quote">
+                “商业航天或处于产业发展的'奇点'，从投资潜力和行情级别看类似于2025年的机器人板块，预期在2026年有较好机会。”
+            </div>
+            <p>段涛自2023年起便开始深入研究航空航天产业，不仅建立了扎实的认知基础，也对相关公司进行了实地走访与投资实践。他在2025年四季报中明确披露：<strong>报告期内卖出海外算力等资产，主动增持商业航天产业链</strong>，核心持仓包括信维通信、中国卫星、航天电子等，并预期未来行情将逐步从火箭端向卫星端、应用端演绎。</p>
+            <div class="risk-note" style="background:#EFF7FC; border-left-color:#2C7DA0;">
+                <strong>🎯 核心投资理念：沿产业链顺序布局，紧盯业绩兑现拐点</strong><br>
+                段涛对商业航天产业链做了清晰的市场空间拆解，并遵循产业进展顺序进行资产配置：
+                <ul style="margin-top: 0.75rem; margin-left: 1rem;">
+                    <li>🔹 <strong>火箭端</strong> – 当前“卡脖子”核心，可回收突破后将推动卫星发射成本下降、组网加速。</li>
+                    <li>🔹 <strong>卫星端</strong> – 受益于星座组网需求放量，卫星制造与配套环节率先兑现业绩。</li>
+                    <li>🔹 <strong>应用端</strong> – 含地面终端、太空算力等，市场空间是星端的10倍，是最终最大的价值沉淀地。</li>
+                </ul>
+                简言之，段涛的选股逻辑是：沿着产业链从上游到下游依次布局，哪里到了业绩兑现拐点就重仓哪里，而不是一次性押注全链条。这种“顺序配置、动态切换”的方法力求贴近真实产业节奏，创造超额收益。
+            </div>
+        </div>
+
+        <!-- 四、持仓方向与产业链布局（基于四季报披露） -->
+        <div class="info-section">
+            <div class="section-title">📦 产业链布局 & 核心持仓方向</div>
+            <div class="section-subnote">基于2025年四季报及基金经理公开访谈，实际持仓以商业航天产业链为核心</div>
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <tr><th>产业链环节</th><th>投资逻辑</th><th>代表持仓（据季报披露）</th></tr>
+                    <tr><td>🚀 火箭端</td><td>可回收技术是规模化发射的“钥匙”，政策+民营火箭公司突破催化，发射服务与配套率先受益。</td><td>航天电子、相关火箭配套企业</td></tr>
+                    <tr><td>🛰️ 卫星端</td><td>中国星网、垣信卫星进入批产交付阶段，卫星制造、星载芯片、相控阵天线需求爆发。</td><td>中国卫星、信维通信、航天电子</td></tr>
+                    <tr><td>📡 应用端（含地面终端/太空算力）</td><td>市场空间最大（星端10倍），卫星互联网终端、北斗应用、太空计算等长期价值沉淀。</td><td>信维通信（地面终端）、华测导航等</td></tr>
+                </table>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-label">组合风格</div><div class="stat-number">主动管理 · 产业纵深</div><div style="font-size:0.7rem;">从“卡脖子”环节向应用端递进</div></div>
+                <div class="stat-card"><div class="stat-label">换手思路</div><div class="stat-number">拐点驱动</div><div style="font-size:0.7rem;">业绩兑现处重仓，动态优化</div></div>
+            </div>
+        </div>
+
+        <!-- 五、投资逻辑详解：从奇点认知到顺序配置 -->
+        <div class="info-section">
+            <div class="section-title">📐 投资逻辑深度拆解 · 商业航天“奇点”策略</div>
+            <div class="manager-quote" style="background:#FCF9F0;">
+                <strong>🔭 产业奇点判断</strong><br>
+                段涛认为当前商业航天类似于2025年的机器人板块：技术突破（可回收火箭）+国家级星座订单（中国星网、垣信）+资本市场认知刚刚起步，行情级别具备较大潜力。2026年或是产业链业绩兑现的加速年。
+            </div>
+            <ul class="logic-list">
+                <li><strong>火箭端先行：卡脖子环节最先受益</strong> – 可回收火箭尚未完全成熟，但产业化已近拐点。一旦可回收技术进入商业化量产，发射成本有望降低60%以上，火箭制造、发射服务、配套元器件需求迎来爆发。</li>
+                <li><strong>卫星端放量：批产交付直接驱动业绩</strong> – 两大星座工程进入密集发射期，卫星制造（整星、载荷、星载芯片）、地面测控等环节订单可见性最强，相关公司利润表已经开始兑现。</li>
+                <li><strong>应用端远期价值：空间为星端10倍</strong> – 卫星互联网终端、车联网/海事/航空通信、太空算力/边缘计算是最终价值沉淀地，基金将沿着产业成熟度逐步增配，不急于提前布局。</li>
+            </ul>
+            <div class="risk-note" style="background:#F1F7FA; border-left-color:#4682b4;">
+                📌 基金管理人表示：希望沿着产业发展的实际进展顺序配置，贴近业绩兑现节奏，努力创造超额收益。“哪里到了业绩兑现拐点就重仓哪里，而不是一次性押注全链条。” 这种动态调整策略力求捕捉产业链价值迁移的α。
+            </div>
+        </div>
+
+        <!-- 六、调仓体现与主动管理特征 -->
+        <div class="info-section">
+            <div class="section-title">🔄 主动管理调仓 · 顺应产业节奏</div>
+            <p>广发招利混合作为主动管理型基金，调仓完全由基金经理依据产业趋势与个股性价比决定。2025年四季度的关键操作体现了段涛的前瞻性：</p>
+            <ul class="adv-list" style="margin-bottom: 1rem;">
+                <li><strong>卖出海外算力资产</strong> – 降低AI算力板块暴露，兑现前期收益。</li>
+                <li><strong>增持商业航天产业链</strong> – 重仓中国卫星、航天电子、信维通信等，重点布局火箭+卫星端。</li>
+                <li><strong>预期未来演进方向</strong> – 行情逐步从火箭端向卫星端、应用端演绎，组合将动态调整权重，加大应用端配置比例。</li>
+            </ul>
+            <div class="risk-note" style="background:#f4f8fc;">
+                📊 <strong>主动管理优势</strong>：相比ETF的被动配置，本基金可以根据产业链不同阶段的景气度进行灵活超配/低配，避免早期过度押注尚未成熟的环节，同时抓住拐点超额收益。
+            </div>
+        </div>
+
+        <!-- 七、产品总结与风险提示 -->
+        <div class="info-section">
+            <div class="section-title">📌 产品总结 & 风险警示</div>
+            <p><strong>广发招利混合A (015838)</strong> 是一只主动管理型偏股混合基金，由深耕航空航天产业的基金经理段涛执掌。产品围绕商业航天“奇点”机会，遵循“火箭端→卫星端→应用端”的产业链顺序进行动态配置，力求在业绩兑现拐点获取超额收益。近一年收益率超67%，近一周排名全市场前5，展现出较强的进攻弹性。</p>
+            <ul class="adv-list" style="margin: 0.8rem 0 1rem 0;">
+                <li>✅ 聚焦商业航天国家级主线，订单确定性高</li>
+                <li>✅ 基金经理深度产业研究+实地调研，认知壁垒深厚</li>
+                <li>✅ “顺序配置”策略贴合产业节奏，兼顾攻守</li>
+                <li>✅ 近一年业绩显著跑赢同类平均，进攻锐度高</li>
+            </ul>
+            <div class="risk-note" style="background:#fff2f0; border-left-color:#d9534f;">
+                <strong>⚠️ 重要风险提示</strong><br>
+                • 基金规模较小（0.42亿元），存在清盘风险，同时可能面临流动性冲击。<br>
+                • 商业航天主题波动较大，受发射进度、技术试验结果、政策变化影响显著，阶段性回撤可能较高。<br>
+                • 主动管理型基金依赖基金经理判断，存在个人认知偏差或择时失误风险。<br>
+                • 过往业绩不预示未来表现，请投资者根据自身风险承受能力（C3及以上）审慎决策。
+            </div>
+        </div>
+
+        <div class="footnote">
+            <b>© 广发基金×港中深“营销新势力创变营”</b>
+            <br>📄数据来源：广发基金基金合同生效公告(2024.6.28)、2024年报(2025.3.27)、2025年四季报(2026.1.21)、2025年业绩快报(东方财富网2026.4.9)、天天基金/Wind/晨星。
+            <br>风险提示：本材料中的信息或表述意见为大学生实习实践材料，不代表广发基金管理有限公司的观点，仅供参考，不构成承诺、要约、要约邀请，也不构成对任何人的投资建议。
+            <br>基金过往业绩并不预示其未来表现，基金经理管理的其他产品业绩并不构成对本基金业绩的保证，基金有风险，投资需谨慎。
+            <br>基金管理人承诺以诚实信用、勤勉尽职的原则管理和运用基金资产但不保证基金一定盈利，也不保证最低收益。
+            <br>投资人购买基金时应详细阅读基金的基金合同和招募说明书等法律文件。基金管理人管理的其他基金业绩和其投资人员取得的过往业绩不预示其未来表现。投资需谨慎。
+        </div>
+    </div>
+</div>
+</body>
+</html>
