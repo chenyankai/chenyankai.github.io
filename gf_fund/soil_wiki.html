@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>广发中证稀有金属ETF (159608) · 资源ETF Wiki</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #eef2f5;
+            font-family: 'Segoe UI', 'Roboto', 'Inter', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+            line-height: 1.5;
+            color: #1a2c3e;
+            padding: 2rem 1rem;
+        }
+
+        .wiki-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.12);
+            overflow: hidden;
+        }
+
+        .wiki-header {
+            background: linear-gradient(135deg, #0a2f2c 0%, #134e46 100%);
+            padding: 1.8rem 2.2rem;
+            color: white;
+            border-bottom: 1px solid #2c6b5e;
+        }
+
+        .wiki-header h1 {
+            font-size: 1.9rem;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .wiki-header .fund-code {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(4px);
+            font-size: 1rem;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            font-family: monospace;
+            font-weight: 500;
+        }
+
+        .wiki-header .sub {
+            margin-top: 0.65rem;
+            opacity: 0.85;
+            font-size: 0.9rem;
+            border-left: 3px solid #fdcd6b;
+            padding-left: 1rem;
+        }
+
+        .wiki-content {
+            padding: 2rem 2rem 2.5rem 2rem;
+        }
+
+        .info-section {
+            margin-bottom: 2.5rem;
+            border-radius: 24px;
+            background: #ffffff;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #fdcd6b;
+            display: inline-block;
+            letter-spacing: -0.2px;
+            color: #0a2f2c;
+        }
+
+        .section-subnote {
+            font-size: 0.8rem;
+            color: #5e6f8d;
+            margin-top: -0.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 18px;
+            border: 1px solid #e2edf2;
+            background: #fff;
+            margin: 1rem 0 1.2rem 0;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            min-width: 500px;
+        }
+
+        .data-table th {
+            background: #f4f9fc;
+            padding: 0.9rem 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #1f4a42;
+            border-bottom: 1px solid #dce5ec;
+        }
+
+        .data-table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #eef2f6;
+            vertical-align: top;
+            color: #1f2f3e;
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .highlight-badge {
+            background: #e2f0ea;
+            color: #1f6e5c;
+            padding: 0.2rem 0.6rem;
+            border-radius: 24px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .stats-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0 1rem 0;
+        }
+
+        .stat-card {
+            background: #f9fbfd;
+            border-radius: 20px;
+            padding: 1rem 1.3rem;
+            flex: 1 1 200px;
+            border: 1px solid #e2edf2;
+        }
+
+        .stat-card .stat-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #5c7a8c;
+        }
+
+        .stat-card .stat-number {
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: #1b6b5c;
+            line-height: 1.2;
+            margin-top: 8px;
+        }
+
+        .comparison-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .comp-card {
+            flex: 1;
+            min-width: 210px;
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid #e0ecf2;
+            padding: 1.2rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .comp-card h4 {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #0a2f2c;
+        }
+
+        .adv-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .adv-list li {
+            margin-bottom: 0.65rem;
+            padding-left: 1.4rem;
+            position: relative;
+        }
+
+        .adv-list li::before {
+            content: "✓";
+            color: #e9b13b;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .risk-note {
+            background: #fff6ea;
+            border-left: 5px solid #e9b13b;
+            padding: 1rem 1.3rem;
+            border-radius: 16px;
+            margin: 1rem 0;
+            font-size: 0.85rem;
+        }
+
+        .footnote {
+            font-size: 0.75rem;
+            color: #6c86a3;
+            border-top: 1px solid #e2ecf3;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            text-align: center;
+        }
+
+        @media (max-width: 700px) {
+            .wiki-content {
+                padding: 1.2rem;
+            }
+            .wiki-header h1 {
+                font-size: 1.5rem;
+            }
+            .section-title {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="wiki-container">
+    <div class="wiki-header">
+        <h1>
+            ⚡ 广发中证稀有金属主题交易型开放式指数证券投资基金
+            <span class="fund-code">159608 (场内) / 联接 019874/019875</span>
+        </h1>
+        <div class="sub">
+            🔋 新能源上游进攻型ETF | 锂+稀土+钨钼钴 | 紧密跟踪中证稀有金属主题指数 (930632)
+        </div>
+    </div>
+    <div class="wiki-content">
+
+        <!-- 一、基础产品信息与业绩表现 -->
+        <div class="info-section">
+            <div class="section-title">📊 基础数据 & 业绩表现</div>
+            <div class="section-subnote">数据截至2026年4月21日，来源：基金季报、天天基金、中证指数公司</div>
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <tr><th style="width:35%">项目</th><th>内容</th></tr>
+                    <tr><td>基金全称</td><td>广发中证稀有金属主题交易型开放式指数证券投资基金</td></tr>
+                    <tr><td>成立日期</td><td>2021年12月15日</td></tr>
+                    <tr><td>投资类型 / 风险等级</td><td>股票型-指数基金（被动跟踪） / R4（中高风险）</td></tr>
+                    <tr><td>基金规模</td><td><strong>56.47亿元</strong>（截至2026/4/20）；2025年末为38.63亿元，2026年初曾达70亿+</td></tr>
+                    <tr><td>基金经理</td><td>姚曦（自2023年1月10日起管理）</td></tr>
+                    <tr><td>近1年收益率</td><td><span class="highlight-badge" style="background:#e2f0ea;">+135.2%</span>（截至2026/4/17，同类ETF领先）</td></tr>
+                    <tr><td>成立以来回报</td><td>+29.58%（年化约5.8%，早期受锂价下跌拖累）</td></tr>
+                    <tr><td>最大回撤（近1年）</td><td>-12.5%（2025年Q4碳酸锂价格暴跌期间）<br>历史最大回撤：-32.77%（2023年）</td></tr>
+                    <tr><td>正收益概率（历史滚动）</td><td>持有满1年盈利概率≈52%；持有满2年≈57%</td></tr>
+                    <tr><td>跑赢上证指数情况</td><td>2025年全年：+63.23% vs 上证+8.12%<br>2026年至今（至4/17）：+31.34% vs 上证+4.2%</td></tr>
+                    <tr><td>目标人群提示</td><td>C4及以上、看好新能源/AI上游资源、能接受短期波动、建议持有期≥1年</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- 二、费用与交易规则 -->
+        <div class="info-section">
+            <div class="section-title">💰 费率结构与交易规则</div>
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <tr><th style="width:35%">项目</th><th>详情</th></tr>
+                    <tr><td>申购方式</td><td>场内：通过证券账户买卖（代码159608），像股票一样交易；<br>场外：联接基金 A类019874 / C类019875</td></tr>
+                    <tr><td>场内交易佣金</td><td>券商收取，通常万0.5~万1.5，无印花税</td></tr>
+                    <tr><td>最小交易单位</td><td>1手 = 100份</td></tr>
+                    <tr><td>一级市场申赎（最小单位）</td><td>800,000份（仅限机构或大额投资者）</td></tr>
+                    <tr><td>场外联接费率（C类019875）</td><td>申购费：0% ；赎回费：持有＜7天收1.5%，≥7天0% ；销售服务费0.20%/年；管理+托管0.60%/年</td></tr>
+                    <tr><td>净值披露</td><td>每个交易日公布IOPV（实时参考净值）及收盘净值</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- 三、同类ETF对比与优势 -->
+        <div class="info-section">
+            <div class="section-title">📈 同类ETF对比 & 核心优势</div>
+            <div class="comparison-grid">
+                <div class="comp-card">
+                    <h4>🏆 广发159608</h4>
+                    <div>规模：56.47亿</div>
+                    <div>日均成交额(近1月)：<strong>1.71亿元</strong></div>
+                    <div>管理费率：0.50%</div>
+                    <div>持仓侧重：<strong>锂（赣锋、天齐、盐湖）+稀土（北方稀土）</strong></div>
+                    <div>跟踪误差年化：<strong>0.49%</strong> (优于同类平均2.29%)</div>
+                </div>
+                <div class="comp-card">
+                    <h4>嘉实562800</h4>
+                    <div>规模：78.97亿</div>
+                    <div>日均成交额：4.34亿元</div>
+                    <div>管理费率：0.50%</div>
+                    <div>侧重：稀土+钼钨（北方稀土、洛阳钼业）</div>
+                    <div>跟踪误差≈0.50%</div>
+                </div>
+                <div class="comp-card">
+                    <h4>工银159671 / 华富561800</h4>
+                    <div>规模：17.88亿 / 2.75亿</div>
+                    <div>流动性中等/较弱</div>
+                    <div>跟踪误差偏高</div>
+                </div>
+            </div>
+            <ul class="adv-list" style="margin-top: 1rem;">
+                <li><strong>锂资源暴露最深</strong> – 前十大含4家锂企（赣锋、天齐、盐湖、中矿），储能/AI电池爆发弹性最大。</li>
+                <li><strong>跟踪精度极高</strong> – 年化跟踪误差仅0.49%，显著优于同类平均(2.29%)，紧密捕捉指数收益。</li>
+                <li><strong>流动性充裕</strong> – 日均成交超1.7亿元，大额资金进出无压力。</li>
+                <li><strong>成分股质量高</strong> – 重仓行业龙头，无微盘股，机构认可度强。</li>
+                <li><strong>差异化定位</strong> – 广发159608 = 新能源上游进攻型；嘉实562800更偏军工+工业金属防御。本品适合押注锂电与人形机器人磁材双主线。</li>
+            </ul>
+        </div>
+
+        <!-- 四、成分股覆盖与前十大重仓股 -->
+        <div class="info-section">
+            <div class="section-title">📦 成分覆盖 & 前十大重仓股</div>
+            <div class="section-subnote">截至2026年一季度（报告期），合计占比≈59.21%</div>
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <tr><th>排名</th><th>股票名称</th><th>股票代码</th><th>持仓占比</th><th>所属细分</th></tr>
+                    <tr><td>1</td><td>洛阳钼业</td><td>603993</td><td>13.20%</td><td>铜钴钼钨多金属</td></tr>
+                    <tr><td>2</td><td>北方稀土</td><td>600111</td><td>8.82%</td><td>轻稀土龙头</td></tr>
+                    <tr><td>3</td><td>华友钴业</td><td>603799</td><td>7.83%</td><td>镍钴一体化</td></tr>
+                    <tr><td>4</td><td>盐湖股份</td><td>000792</td><td>6.76%</td><td>青海盐湖提锂</td></tr>
+                    <tr><td>5</td><td>赣锋锂业</td><td>002460</td><td>5.36%</td><td>全球锂资源布局</td></tr>
+                    <tr><td>6</td><td>天齐锂业</td><td>002466</td><td>4.33%</td><td>澳洲+智利锂矿</td></tr>
+                    <tr><td>7</td><td>中矿资源</td><td>002738</td><td>4.29%</td><td>非洲锂+铯铷</td></tr>
+                    <tr><td>8</td><td>厦门钨业</td><td>600549</td><td>3.45%</td><td>稀土+硬质合金</td></tr>
+                    <tr><td>9</td><td>中国稀土</td><td>000831</td><td>2.61%</td><td>中重稀土整合平台</td></tr>
+                    <tr><td>10</td><td>西部超导</td><td>688122</td><td>2.56%</td><td>高端钛合金+超导</td></tr>
+                </table>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-label">覆盖金属品类</div><div class="stat-number">锂 · 稀土 · 钴 · 钨 · 钼 · 锑</div><div style="font-size:0.75rem;">能源金属+战略小金属</div></div>
+                <div class="stat-card"><div class="stat-label">龙头集中度</div><div class="stat-number">TOP10 ≈59%</div><div style="font-size:0.75rem;">高度聚焦稀有金属龙头</div></div>
+            </div>
+        </div>
+
+        <!-- 五、细分行业供需逻辑 & 调仓动向 -->
+        <div class="info-section">
+            <div class="section-title">⚙️ 重点标的行业逻辑 & 近期调仓</div>
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <tr><th style="width:20%">细分品种</th><th>供给/需求核心驱动</th><th>代表持仓</th></tr>
+                    <tr><td>🔋 锂</td><td>南美锂三角扩产放缓+澳洲精矿成本倒挂；储能装机预计+45%，美国IRA推动本土锂加工；津巴布韦限制原矿出口加剧资源民族主义。</td><td>赣锋锂业、天齐锂业、盐湖股份、中矿资源</td></tr>
+                    <tr><td>🧲 稀土</td><td>中国总量控制+出口许可，缅甸矿受限；人形机器人单台需0.8kg钕铁硼，2027年量产新增万吨级需求；战略反制工具价值凸显。</td><td>北方稀土、中国稀土、厦门钨业</td></tr>
+                    <tr><td>⚒️ 钨/钼/钴</td><td>AI服务器PCB微型钻针依赖超细钨丝；中国占全球钨储量60%实施开采总量控制；高镍低钴趋势下钴加工有所调整。</td><td>洛阳钼业、厦门钨业、华友钴业</td></tr>
+                </table>
+            </div>
+            <div class="risk-note">
+                <strong>🔄 近期调仓逻辑（2026年一季度）</strong><br>
+                • 新增：加强锂资源自主可控标的（中矿资源非洲矿山放量）。<br>
+                • 减持：部分钴盐加工企业（高镍低钴趋势）。<br>
+                • 整体稳定：成分股调整较少，行业格局趋于龙头集中，反映指数编制成熟。
+            </div>
+        </div>
+
+        <!-- 六、季度调仓方法的体现（指数规则） -->
+        <div class="info-section">
+            <div class="section-title">📐 指数调仓机制 · 季度定期调整</div>
+            <p style="margin-bottom: 0.75rem;">该ETF跟踪<strong>中证稀有金属主题指数 (930632)</strong>，严格遵循指数公司季度调仓规则：</p>
+            <ul class="adv-list" style="margin-bottom: 1rem;">
+                <li><strong>调仓频率</strong> – 每年3月、6月、9月、12月第二个星期五的下一个交易日生效。</li>
+                <li><strong>选样方法</strong> – 剔除ST股，筛选稀有金属采选/冶炼/加工企业，按过去一年日均总市值与流动性排序，选取不超过50只。</li>
+                <li><strong>权重限制</strong> – 单一个股权重上限10%，前五大合计不超过40%。</li>
+                <li><strong>2026年3月调仓特点</strong> – 仅调整8只成分股（相比2025年12月调整44只大幅减少），表明行业龙头地位固化，产业进入成熟集中阶段。</li>
+            </ul>
+            <div class="risk-note" style="background:#eef3fc; border-left-color:#2c7da0;">
+                📌 来源：中证指数公司官网《中证稀有金属主题指数编制方案》（2026年3月更新） —— 体现“优胜劣汰趋缓、龙头集中度提升”的产业信号。
+            </div>
+        </div>
+
+        <!-- 总结与风险提示 -->
+        <div class="info-section">
+            <div class="section-title">📌 产品总结 & 风险警示</div>
+            <p><strong>广发中证稀有金属ETF (159608)</strong> 是一只高度聚焦“新质生产力上游资源”的精准工具型ETF，选品逻辑根植于全球能源转型与科技竞争下的资源安全战略。数据真实、结构透明、流动性佳，适合长期看好中国高端制造资源掌控力的投资者。</p>
+            <ul class="adv-list" style="margin: 0.8rem 0 1rem 0;">
+                <li>✅ 锂资源进攻弹性最强，储能+AI电池双需求驱动</li>
+                <li>✅ 跟踪误差行业领先，规模大流动性好</li>
+                <li>✅ 覆盖稀土、钨钼战略金属，受益于人形机器人及高端制造</li>
+            </ul>
+            <div class="risk-note" style="background:#fff2f0; border-left-color:#d9534f;">
+                <strong>⚠️ 重要风险提示</strong><br>
+                • 产品波动较大，历史最大回撤超过32%，短期可能因锂价/稀土价格剧烈波动产生较大回撤。<br>
+                • 行业集中度高（稀有金属单一赛道），受宏观经济、补贴政策、地缘政治影响显著。<br>
+                • 过往业绩不预示未来表现，投资前请完成风险测评并确认自身风险承受能力为C4及以上。
+            </div>
+        </div>
+
+        <div class="footnote">
+            <b>© 广发基金×港中深“营销新势力创变营”</b>
+            <br>📄数据来源：广发基金基金合同生效公告(2024.6.28)、2024年报(2025.3.27)、2025年四季报(2026.1.21)、2025年业绩快报(东方财富网2026.4.9)、天天基金/Wind/晨星。
+            <br>风险提示：本材料中的信息或表述意见为大学生实习实践材料，不代表广发基金管理有限公司的观点，仅供参考，不构成承诺、要约、要约邀请，也不构成对任何人的投资建议。
+            <br>基金过往业绩并不预示其未来表现，基金经理管理的其他产品业绩并不构成对本基金业绩的保证，基金有风险，投资需谨慎。
+            <br>基金管理人承诺以诚实信用、勤勉尽职的原则管理和运用基金资产但不保证基金一定盈利，也不保证最低收益。
+            <br>投资人购买基金时应详细阅读基金的基金合同和招募说明书等法律文件。基金管理人管理的其他基金业绩和其投资人员取得的过往业绩不预示其未来表现。投资需谨慎。
+        </div>
+    </div>
+</div>
+</body>
+</html>
