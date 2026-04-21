@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>智投未来 · 双赛道掘金 | 基金公司营销页面</title>
+    <title>仰望星空 · 点石成金</title>
     <!-- Google Fonts & 图标库 -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -550,7 +550,7 @@
 
 <!-- 侧边导航大屏 -->
 <div class="side-nav" id="sideNav">
-    <div class="nav-item" data-target="module1"><i class="fas fa-chart-simple"></i> <span>行业概览</span></div>
+    <div class="nav-item" data-target="module1"><i class="fas fa-anchor"></i> <span>行业概览</span></div>
     <div class="nav-item" data-target="module2"><i class="fas fa-coins"></i> <span>有色金属</span></div>
     <div class="nav-item" data-target="module3"><i class="fas fa-rocket"></i> <span>商业航天</span></div>
     <div class="nav-item" data-target="module4"><i class="fas fa-flag-checkered"></i> <span>总结展望</span></div>
@@ -659,18 +659,16 @@
                     <li> <strong>电网投资加速铜库存去化</strong></li>
                     <img src="gf_fund/assets/insert/04.png" alt="有色01" class="responsive-img">
                 </ul>
-            </div>                       
-            <div class="fund-match">
-                <h3>🔗 匹配基金产品</h3>
-                <div class="fund-item"><span><span class="fund-name">有色金属ETF</span> <span class="fund-code">512400</span></span><button class="btn-small fund-interact" data-url="https://www.example.com/fund/512400">📈 查看详情</button></div>
-                <div class="fund-item"><span><span class="fund-name">稀土产业ETF</span> <span class="fund-code">516780</span></span><button class="btn-small fund-interact" data-url="https://www.example.com/fund/516780">📈 查看详情</button></div>
-                <div class="fund-item"><span><span class="fund-name">锂电新材料ETF</span> <span class="fund-code">561160</span></span><button class="btn-small fund-interact" data-url="https://www.example.com/fund/561160">📈 查看详情</button></div>
-                <div class="fund-item"><span><span class="fund-name">有色龙头主动权益</span> <span class="fund-code">(优选)</span></span><button class="btn-small fund-interact" data-url="https://www.example.com/fund/metal-equity">📈 查看详情</button></div>
-            </div>
+            </div> 
+            <div class="advice-block" style="margin: 24px 0 16px 0;">
+                <h3><i class="fas fa-file-alt"></i> 估值重构-从"周期品"到"战略资产"</h3>
+                <ul style="margin-left: 1.2rem; margin-top: 12px;">
+                    <li>有色金属从传统的顺周期商品，升级为新能源、AI算力基础设施、国防军工的战略资源。传统上，有色金属被归类为强周期品，价格由"供需缺口×库存周期"决定，呈现"暴涨-暴跌-长期低迷"的钟摆规律。随着新能源领域金属需求量的增加，AI算力扩张带来的金属需求爆发，各国将关键矿产纳入战略储备体系，有色金属的估值逻辑转向资源稀缺性×战略溢价"。</li>
+                </ul>
+            </div>                                  
             <div class="advice-block">
-                <h3>📌 投资组合行动建议</h3>
-                <ul><li>核心-卫星策略：配置15%-20%有色金属ETF</li><li>定投布局：周定投分批建仓锂/稀土</li><li>风险控制：5%~10%黄金ETF对冲</li></ul>
-                <button class="btn-interact" id="metalAdviceBtn" data-url="https://www.example.com/metal-portfolio">获取个性化配置方案</button>
+                <h3>🔗 匹配基金产品</h3>
+                <div class="fund-item"><span><span class="fund-name">广发品质优选混合型发起式证券投资基金 (A类)</span> <span class="fund-code">018220</span></span><button class="btn-small fund-interact" data-url="gf_fund/metal_wiki.html">📈 查看详情</button></div>
             </div>
         </div>
     </div>
@@ -1000,7 +998,7 @@
                 url = fallback;
             }
             else if (btn.classList.contains('btn-outline') && btn.parentElement?.classList?.contains('sub-card')) {
-                url = btn.getAttribute('data-url') || 'https://www.example.com/industry-logic';
+                url = btn.getAttribute('data-url') || 'gf_fund/comingsoon.html';
             }
             else {
                 url = 'https://www.example.com/default';
@@ -1044,7 +1042,7 @@
                 else btn.setAttribute('data-url', 'https://www.example.com/fund/general');
             }
             else if (btn.classList.contains('btn-outline') && btn.closest('.sub-card')) {
-                btn.setAttribute('data-url', 'https://www.example.com/industry-logic');
+                btn.setAttribute('data-url', 'gf_fund/comingsoon.html');
             }
         }
     });
