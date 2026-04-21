@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>智投未来 · 双赛道掘金 | 基金公司营销页面</title>
+    <!-- Google Fonts & 图标库 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0f1a;
+            color: #f0f3fa;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* ========= 欢迎页全屏轮播 ========= */
+        .hero-carousel {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background: #000;
+        }
+        .carousel-slides {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+            z-index: 1;
+        }
+        .carousel-slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
+        /* 欢迎页半透明蒙版（无毛玻璃） */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(5, 10, 25, 0.55);
+            z-index: 3;
+        }
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 10;
+            width: 90%;
+            max-width: 900px;
+            color: white;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, #f0b90b);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+        .hero-content p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 1rem;
+        }
+        .hero-sub {
+            font-size: 1rem;
+            letter-spacing: 2px;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,215,0,0.6);
+            color: #f0b90b;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 15;
+            transition: all 0.2s;
+            font-size: 1.6rem;
+        }
+        .carousel-btn:hover {
+            background: rgba(240,185,11,0.3);
+            transform: translateY(-50%) scale(1.05);
+        }
+        .carousel-btn.prev { left: 24px; }
+        .carousel-btn.next { right: 24px; }
+        .carousel-dots {
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 14px;
+            z-index: 15;
+        }
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .dot.active {
+            background: #f0b90b;
+            width: 28px;
+            border-radius: 10px;
+        }
+        /* 向下箭头 (跳动动效) */
+        .scroll-down {
+            position: absolute;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 15;
+            cursor: pointer;
+            color: #f0b90b;
+            font-size: 2.2rem;
+            background: rgba(0,0,0,0.4);
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(240,185,11,0.7);
+            animation: floatBounce 2.2s infinite ease-in-out;
+            transition: 0.2s;
+        }
+        .scroll-down:hover {
+            background: rgba(240,185,11,0.3);
+            transform: translateX(-50%) scale(1.1);
+            animation: none;
+        }
+        @keyframes floatBounce {
+            0% { transform: translateX(-50%) translateY(0); opacity: 0.7; }
+            50% { transform: translateX(-50%) translateY(12px); opacity: 1; }
+            100% { transform: translateX(-50%) translateY(0); opacity: 0.7; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translate(-50%, -40%); }
+            to { opacity: 1; transform: translate(-50%, -50%); }
+        }
+
+        /* ========= 左上角导航开关 ========= */
+        .nav-toggle-btn {
+            position: fixed;
+            top: 24px;
+            left: 24px;
+            z-index: 1100;
+            background: rgba(15, 25, 45, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(240, 185, 11, 0.5);
+            border-radius: 40px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.6rem;
+            color: #f0b90b;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .nav-toggle-btn:hover {
+            background: rgba(240, 185, 11, 0.25);
+            transform: scale(1.02);
+        }
+
+        /* 侧边导航栏 (大屏左侧) */
+        .side-nav {
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 280px;
+            background: rgba(10, 18, 28, 0.94);
+            backdrop-filter: blur(16px);
+            border-right: 1px solid rgba(240, 185, 11, 0.3);
+            z-index: 1050;
+            transform: translateX(-100%);
+            transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            display: flex;
+            flex-direction: column;
+            padding: 100px 20px 40px;
+            gap: 28px;
+            box-shadow: 8px 0 30px rgba(0,0,0,0.5);
+        }
+        .side-nav.open { transform: translateX(0); }
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 14px 20px;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #cdd9ff;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        .nav-item i { width: 28px; font-size: 1.4rem; }
+        .nav-item:hover {
+            background: rgba(240, 185, 11, 0.2);
+            color: #f0b90b;
+            transform: translateX(6px);
+        }
+        .nav-item.active {
+            background: linear-gradient(95deg, rgba(240,185,11,0.25), rgba(217,119,6,0.15));
+            color: #f0b90b;
+            border-left: 3px solid #f0b90b;
+        }
+        /* 底部导航栏 (小屏) */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 18, 28, 0.94);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(240, 185, 11, 0.4);
+            z-index: 1050;
+            display: none;
+            justify-content: space-around;
+            padding: 12px 16px 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        .bottom-nav.open { transform: translateY(0); }
+        .bottom-nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            color: #9aa8c9;
+            font-size: 0.75rem;
+            padding: 6px 12px;
+            border-radius: 30px;
+        }
+        .bottom-nav-item i { font-size: 1.5rem; }
+        .bottom-nav-item.active { color: #f0b90b; background: rgba(240,185,11,0.15); }
+
+        @media (min-width: 900px) {
+            .bottom-nav { display: none !important; }
+            .side-nav { display: flex; }
+        }
+        @media (max-width: 899px) {
+            .side-nav { display: none !important; }
+            .bottom-nav { display: flex; }
+            .nav-toggle-btn { top: 16px; left: 16px; width: 42px; height: 42px; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .hero-content p { font-size: 1rem; }
+            .carousel-btn { width: 36px; height: 36px; font-size: 1.2rem; }
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* 四个模块背景 */
+        .module-bg-1, .module-bg-2, .module-bg-3, .module-bg-4 {
+            position: relative;
+            background-attachment: fixed;
+        }
+        .module-bg-1 { background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format') center/cover no-repeat fixed; }
+        .module-bg-1::before { content: ""; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(10,20,35,0.65); backdrop-filter: blur(2px); z-index:1; }
+        .module-bg-2 { background: url('gf_fund/assets/pic/Pic_05.jpg') center/cover no-repeat fixed; }
+        .module-bg-2::before { content: ""; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(3px); z-index:1; }
+        .module-bg-3 { background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format') center/cover no-repeat fixed; }
+        .module-bg-3::before { content: ""; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(5,15,35,0.75); backdrop-filter: blur(2px); z-index:1; }
+        .module-bg-4 { background: url('gf_fund/assets/pic/Pic_02.jpg') center/cover no-repeat fixed; }
+        .module-bg-4::before { content: ""; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,10,25,0.7); backdrop-filter: blur(2px); z-index:1; }
+
+        .module-section {
+            position: relative;
+            z-index: 2;
+            padding: 70px 0 60px;
+            scroll-margin-top: 24px;
+        }
+        .card {
+            background: rgba(20, 30, 45, 0.05);
+            backdrop-filter: blur(12px);
+            border-radius: 32px;
+            padding: 28px 24px;
+            margin-bottom: 36px;
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: transform 0.25s ease;
+        }
+        .card:hover { transform: translateY(-5px); background: rgba(25,40,60,0.75); }
+        .section-title {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin-bottom: 28px;
+            border-left: 6px solid #f0b90b;
+            padding-left: 20px;
+        }
+        .sub-module-grid { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 16px; }
+        .sub-card {
+            flex:1; min-width:260px;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(8px);
+            border-radius: 28px;
+            padding: 20px;
+            border:1px solid rgba(255,215,0,0.3);
+        }
+        .badge-reason, .badge-policy, .badge-trend {
+            display: inline-block;
+            background: rgba(0,0,0,0.6);
+            border-radius: 40px;
+            padding: 6px 14px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin: 8px 8px 0 0;
+            color: #ffdd99;
+            border-left: 2px solid #f0b90b;
+        }
+        .btn-interact {
+            background: linear-gradient(95deg, #f0b90b, #d97706);
+            border: none;
+            color: #0a0a1a;
+            padding: 10px 22px;
+            border-radius: 60px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.2s;
+        }
+        .btn-interact:hover { opacity: 0.9; transform: scale(0.98); }
+        .btn-outline { background: transparent; border: 1.5px solid #f0b90b; color: #ffdd99; }
+        .fund-match {
+            background: rgba(0,0,0,0.45);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 18px;
+            margin: 20px 0;
+        }
+        .fund-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        .btn-small {
+            background: #f0b90b;
+            border: none;
+            color: #111;
+            padding: 6px 16px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+        .btn-small:hover { background: #ffcc33; transform: translateY(-1px); }
+        .advice-block {
+            background: linear-gradient(115deg, rgba(0,0,0,0.6), rgba(30,40,60,0.7));
+            backdrop-filter: blur(8px);
+            border-radius: 24px;
+            padding: 20px;
+            border-left: 5px solid #f0b90b;
+        }
+        .summary-card { background: rgba(0,0,0,0.05); backdrop-filter: blur(12px); text-align: center; padding: 36px 24px; }
+        footer { text-align: center; padding: 32px 0 48px; font-size: 0.8rem; color: #aaaac0; border-top: 1px solid rgba(255,255,255,0.1); }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in { animation: fadeUp 0.7s ease forwards; }
+    </style>
+</head>
+<body>
+
+<!-- 欢迎页 + 轮播背景 -->
+<section class="hero-carousel" id="heroSection">
+    <div class="carousel-slides">
+        <div class="carousel-slide active" style="background-image: url('gf_fund/assets/pic/Pic_01.jpg');"></div>
+        <div class="carousel-slide" style="background-image: url('gf_fund/assets/pic/Pic_02.jpg');"></div>
+        <div class="carousel-slide" style="background-image: url('gf_fund/assets/pic/Pic_03.jpeg');"></div>
+        <div class="carousel-slide" style="background-image: url('gf_fund/assets/pic/Pic_04.jpg');"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>智投未来 · 赛道掘金</h1>
+        <p>有色金属 | 商业航天 双星驱动</p>
+        <div class="hero-sub">把握产业浪潮 配置核心资产</div>
+    </div>
+    <!-- 手动切换按钮 -->
+    <div class="carousel-btn prev" id="prevSlide"><i class="fas fa-chevron-left"></i></div>
+    <div class="carousel-btn next" id="nextSlide"><i class="fas fa-chevron-right"></i></div>
+    <div class="carousel-dots" id="carouselDots"></div>
+    <!-- 向下箭头按钮（浮动跳动） -->
+    <div class="scroll-down" id="scrollDownArrow">
+        <i class="fas fa-chevron-down"></i>
+    </div>
+</section>
+
+<!-- 左上角开关 -->
+<div class="nav-toggle-btn" id="navToggleBtn"><i class="fas fa-bars"></i></div>
+
+<!-- 侧边导航大屏 -->
+<div class="side-nav" id="sideNav">
+    <div class="nav-item" data-target="module1"><i class="fas fa-chart-simple"></i> <span>行业概览</span></div>
+    <div class="nav-item" data-target="module2"><i class="fas fa-coins"></i> <span>有色金属</span></div>
+    <div class="nav-item" data-target="module3"><i class="fas fa-rocket"></i> <span>商业航天</span></div>
+    <div class="nav-item" data-target="module4"><i class="fas fa-flag-checkered"></i> <span>总结展望</span></div>
+</div>
+<!-- 底部导航小屏 -->
+<div class="bottom-nav" id="bottomNav">
+    <div class="bottom-nav-item" data-target="module1"><i class="fas fa-chart-simple"></i><span>概览</span></div>
+    <div class="bottom-nav-item" data-target="module2"><i class="fas fa-coins"></i><span>有色</span></div>
+    <div class="bottom-nav-item" data-target="module3"><i class="fas fa-rocket"></i><span>航天</span></div>
+    <div class="bottom-nav-item" data-target="module4"><i class="fas fa-flag-checkered"></i><span>总结</span></div>
+</div>
+
+<!-- 模块1: 行业概览 -->
+<div id="module1" class="module-bg-1">
+    <div class="container module-section">
+        <div class="card fade-in">
+            <div class="section-title">
+                📊 行业概览 · 双星闪耀
+            </div>
+            <div class="sub-module-grid">
+                <div class="sub-card">
+                    <h3>
+                        <i class="fas fa-coins"></i> 有色金属
+                    </h3>
+                    <div>
+                        <span class="badge-reason">推荐原因</span> 新能源转型+稀缺资源属性，需求爆发。
+                    </div>
+                    <div>
+                        <span class="badge-policy">相关政策</span> 《有色金属稳增长方案》推动升级。
+                    </div>
+                    <div>
+                        <span class="badge-trend">市场趋势</span> 全球脱碳加速铜铝需求，锂电景气延续。
+                    </div>
+                    <button class="btn-interact btn-outline" data-info="有色金属: 供给约束+绿色红利，长期估值修复">
+                        <i class="fas fa-lightbulb"></i> 一键解读
+                    </button>
+                </div>
+                <div class="sub-card">
+                    <h3>
+                        <i class="fas fa-rocket"></i> 商业航天
+                    </h3>
+                    <div>
+                        <span class="badge-reason">推荐原因</span> 卫星互联网+低轨星座，万亿蓝海。
+                    </div>
+                    <div>
+                        <span class="badge-policy">相关政策</span> 国家“十四五”商业航天专项。
+                    </div>
+                    <div>
+                        <span class="badge-trend">市场趋势</span> 可回收火箭降本，通导遥一体化。
+                    </div>
+                    <button class="btn-interact btn-outline" data-info="商业航天: 政策催化+技术迭代，制造发射提速">
+                        <i class="fas fa-lightbulb"></i> 一键解读
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 模块2: 有色金属 -->
+<div id="module2" class="module-bg-2">
+    <div class="container module-section">
+        <div class="card fade-in">
+            <div class="section-title">
+                <i class="fas fa-gem"></i> 有色金属 · 深度解析
+            </div>
+            <div>
+                <h3>
+                    <i class="fas fa-chart-pie"></i> 赛道全景
+                </h3>
+                <p>工业金属+能源金属+贵金属，新能源车光伏拉动铜铝，锂电高景气，稀土永磁受益。</p>
+            </div>
+            <div class="fund-match">
+                <h3>
+                    匹配基金产品
+                </h3>
+            <div class="fund-item">
+                <span>
+                    <span class="fund-name">有色金属ETF</span>
+                    <span class="fund-code">512400</span>
+                </span>
+                <button class="btn-small fund-interact" data-url="https://www.example.com/fund/512400" data-linktype="fund">
+                    📈 查看详情
+                </button>
+            </div>
+            <div class="fund-item">
+                <span>
+                    <span class="fund-name">稀土产业ETF</span>
+                    <span class="fund-code">516780</span>
+                </span>
+                <button class="btn-small fund-interact" data-url="https://www.example.com/fund/516780" data-linktype="fund">
+                    📈 查看详情
+                </button>
+            </div>
+            <div class="fund-item">
+                <span>
+                    <span class="fund-name">锂电新材料ETF</span>
+                    <span class="fund-code">561160</span>
+                </span>
+                <button class="btn-small fund-interact" data-url="https://www.example.com/fund/561160" data-linktype="fund">
+                    📈 查看详情
+                </button>
+            </div>
+            <div class="fund-item">
+                <span>
+                    <span class="fund-name">有色龙头主动权益</span>
+                    <span class="fund-code">(优选)</span>
+                </span>
+                <button class="btn-small fund-interact" data-url="https://www.example.com/fund/metal-equity" data-linktype="fund">
+                    📈 查看详情
+                </button>
+            </div>
+        </div>
+        <div class="advice-block">
+            <h3>投资组合行动建议</h3>
+            <ul>
+                <li>核心-卫星策略：配置15%-20%有色金属ETF</li>
+                <li>定投布局：周定投分批建仓锂/稀土</li>
+                <li>风险控制：5%~10%黄金ETF对冲</li>
+            </ul>
+            <button class="btn-interact" id="metalAdviceBtn" data-url="https://www.example.com/metal-portfolio" data-linktype="advice">
+                获取个性化配置方案
+            </button>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- 模块3: 商业航天 -->
+<div id="module3" class="module-bg-3">
+    <div class="container module-section">
+        <div class="card fade-in"><div class="section-title">
+            <i class="fas fa-space-shuttle"></i> 商业航天 · 星辰大海
+        </div>
+        <div>
+            <h3>
+                <i class="fas fa-globe"></i> 赛道全景
+            </h3>
+            <p>火箭制造、卫星整星、地面终端，低轨星座建设万亿市场，上游零部件高成长。</p>
+        </div>
+        <div class="fund-match">
+            <h3>相关ETF/基金</h3>
+            <div class="fund-item">
+                <span>
+                    <span class="fund-name">国防军工ETF</span>
+                    <span class="fund-code">512810</span>
+                </span>
+                <button class="btn-small fund-interact" data-url="https://www.example.com/fund/512810" data-linktype="fund">
+                    🛰️ 了解航天含量
+                </button>
+            </div>
+            <div class="fund-item">
+                <span>
+                    <span class="fund-name">空天信息产业ETF</span>
+                    <span class="fund-code">159875</span>
+                </span>
+                <button class="btn-small fund-interact" data-url="https://www.example.com/fund/159875" data-linktype="fund">
+                    🛰️ 了解航天含量
+                </button>
+            </div>
+            <div class="fund-item">
+                <span>
+                    <span class="fund-name">商业航天先锋混合</span>
+                    <span class="fund-code">(主题基金)</span>
+                </span>
+                <button class="btn-small fund-interact" data-url="https://www.example.com/fund/space-mix" data-linktype="fund">
+                    🛰️ 了解航天含量
+                </button>
+            </div>
+            <div class="fund-item">
+                <span>
+                    <span class="fund-name">卫星互联网ETF</span>
+                    <span class="fund-code">560160</span>
+                </span>
+                <button class="btn-small fund-interact" data-url="https://www.example.com/fund/560160" data-linktype="fund">
+                    🛰️ 了解航天含量
+                </button>
+            </div>
+        </div>
+        <div class="advice-block">
+            <h3>投资组合行动建议</h3>
+            <ul>
+                <li>长坡厚雪配置：主题仓位10%-15%</li>
+                <li>分批布局：定投相关ETF捕捉产业红利</li>
+                <li>攻守兼备：搭配国防军工ETF平衡波动</li>
+            </ul>
+            <button class="btn-interact" id="spaceAdviceBtn" data-url="https://www.example.com/space-portfolio" data-linktype="advice">
+                获取航天配置报告
+            </button>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- 模块4: 总结 -->
+<div id="module4" class="module-bg-4">
+    <div class="container module-section">
+        <div class="card summary-card fade-in">
+            <div class="section-title">
+                🌟 双赛道共振 智配未来
+            </div>
+            <p>
+                <b>心系托付，一路广发。</b>
+                <br>
+                <br>广发基金——值得托付的领先全能资产管理公司！
+                <br>
+                <br>📞客服热线：95105828
+            </p>
+            <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:20px;">
+                <button class="btn-interact" id="summaryDownloadBtn" data-url="https://sj.qq.com/appdetail/com.hctforgf.gff" data-linktype="whitepaper">
+                    点击下载广发基金APP，更加专业，更加懂你
+                </button>
+                <button class="btn-interact btn-outline" id="contactBtn" data-url="https://weixin.qq.com/" data-linktype="contact">
+                    联系您的专属投资顾问，贴心服务，玩转理财
+                </button>
+            </div>
+            <br>
+            <footer>
+                <b>© 广发基金×港中深“营销新势力创变营”</b>
+                <br>风险提示：本材料中的信息或表述意见为大学生实习实践材料，不代表广发基金管理有限公司的观点，仅供参考，不构成承诺、要约、要约邀请，也不构成对任何人的投资建议。
+                <br>基金过往业绩并不预示其未来表现，基金经理管理的其他产品业绩并不构成对本基金业绩的保证，基金有风险，投资需谨慎。
+                <br>基金管理人承诺以诚实信用、勤勉尽职的原则管理和运用基金资产但不保证基金一定盈利，也不保证最低收益。
+                <br>投资人购买基金时应详细阅读基金的基金合同和招募说明书等法律文件。基金管理人管理的其他基金业绩和其投资人员取得的过往业绩不预示其未来表现。投资需谨慎。
+            </footer>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 轮播逻辑
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dotsContainer = document.getElementById('carouselDots');
+    let currentIndex = 0;
+    let autoInterval;
+    function createDots() {
+        dotsContainer.innerHTML = '';
+        slides.forEach((_, idx) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if(idx === currentIndex) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(idx));
+            dotsContainer.appendChild(dot);
+        });
+    }
+    function goToSlide(index) {
+        if(index < 0) index = slides.length-1;
+        if(index >= slides.length) index = 0;
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+        currentIndex = index;
+        updateDotsActive();
+        resetAutoPlay();
+    }
+    function updateDotsActive() {
+        const dots = document.querySelectorAll('.dot');
+        dots.forEach((dot, i) => {
+            if(i === currentIndex) dot.classList.add('active');
+            else dot.classList.remove('active');
+        });
+    }
+    function nextSlide() { goToSlide(currentIndex+1); }
+    function prevSlide() { goToSlide(currentIndex-1); }
+    function resetAutoPlay() {
+        if(autoInterval) clearInterval(autoInterval);
+        autoInterval = setInterval(() => { nextSlide(); }, 5000);
+    }
+    document.getElementById('prevSlide').addEventListener('click', prevSlide);
+    document.getElementById('nextSlide').addEventListener('click', nextSlide);
+    createDots();
+    resetAutoPlay();
+
+    // 向下箭头滚动到下一屏 (模块1)
+    const scrollArrow = document.getElementById('scrollDownArrow');
+    const module1 = document.getElementById('module1');
+    if(scrollArrow && module1) {
+        scrollArrow.addEventListener('click', () => {
+            const offset = 20;
+            const y = module1.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        });
+    }
+
+    // 导航开关 & 侧边栏控制
+    const toggleBtn = document.getElementById('navToggleBtn');
+    const sideNav = document.getElementById('sideNav');
+    const bottomNav = document.getElementById('bottomNav');
+    let isNavOpen = false;
+    function toggleNav() {
+        isNavOpen = !isNavOpen;
+        const isLarge = window.innerWidth >= 900;
+        if(isLarge && sideNav) {
+            if(isNavOpen) sideNav.classList.add('open');
+            else sideNav.classList.remove('open');
+        } else if(!isLarge && bottomNav) {
+            if(isNavOpen) bottomNav.classList.add('open');
+            else bottomNav.classList.remove('open');
+        }
+        const icon = toggleBtn.querySelector('i');
+        if(icon) icon.className = isNavOpen ? 'fas fa-times' : 'fas fa-bars';
+    }
+    toggleBtn.addEventListener('click', toggleNav);
+    function initNavState() {
+        isNavOpen = false;
+        const isLarge = window.innerWidth >= 900;
+        if(isLarge && sideNav) sideNav.classList.remove('open');
+        if(!isLarge && bottomNav) bottomNav.classList.remove('open');
+        const icon = toggleBtn.querySelector('i');
+        if(icon) icon.className = 'fas fa-bars';
+    }
+    window.addEventListener('resize', () => {
+        if(isNavOpen) {
+            isNavOpen = false;
+            const isLarge = window.innerWidth >= 900;
+            if(isLarge && sideNav) sideNav.classList.remove('open');
+            if(!isLarge && bottomNav) bottomNav.classList.remove('open');
+            const icon = toggleBtn.querySelector('i');
+            if(icon) icon.className = 'fas fa-bars';
+        } else {
+            const isLarge = window.innerWidth >= 900;
+            if(isLarge && sideNav) sideNav.classList.remove('open');
+            if(!isLarge && bottomNav) bottomNav.classList.remove('open');
+        }
+    });
+    initNavState();
+
+    // 滚动高亮导航
+    const sections = { 
+        module1: document.getElementById('module1'), 
+        module2: document.getElementById('module2'), 
+        module3: document.getElementById('module3'), 
+        module4: document.getElementById('module4') 
+    };
+    function updateActiveNav() {
+        const scrollPos = window.scrollY + 150;
+        let activeId = 'module1';
+        for(const [id, sec] of Object.entries(sections)) {
+            if(sec) {
+                const top = sec.offsetTop;
+                const bottom = top + sec.offsetHeight;
+                if(scrollPos >= top && scrollPos < bottom) { activeId = id; break; }
+            }
+        }
+        document.querySelectorAll('.side-nav .nav-item, .bottom-nav-item').forEach(el => {
+            const target = el.getAttribute('data-target');
+            if(target === activeId) el.classList.add('active');
+            else el.classList.remove('active');
+        });
+    }
+    window.addEventListener('scroll', updateActiveNav);
+    window.addEventListener('load', updateActiveNav);
+    function scrollToSection(sectionId) {
+        const target = document.getElementById(sectionId);
+        if(target) window.scrollTo({ top: target.offsetTop - 20, behavior: 'smooth' });
+        updateActiveNav();
+    }
+    document.querySelectorAll('.side-nav .nav-item, .bottom-nav-item').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const targetId = btn.getAttribute('data-target');
+            if(targetId) scrollToSection(targetId);
+        });
+    });
+
+    // ========== 统一处理所有按钮点击：跳转到新页面 ==========
+    // 删除所有原来的toast交互，改为跳转外部链接（模拟真实营销跳转）
+    function handleButtonRedirect(event) {
+        const btn = event.currentTarget;
+        let url = btn.getAttribute('data-url');
+        if (!url) {
+            // 降级处理：根据不同按钮类型模拟默认链接
+            if (btn.id === 'metalAdviceBtn') url = 'https://www.example.com/metal-portfolio';
+            else if (btn.id === 'spaceAdviceBtn') url = 'https://www.example.com/space-portfolio';
+            else if (btn.id === 'summaryDownloadBtn') url = 'https://www.example.com/whitepaper';
+            else if (btn.id === 'contactBtn') url = 'https://www.example.com/advisor';
+            else if (btn.classList.contains('fund-interact')) {
+                const fallback = btn.getAttribute('data-url') || 'https://www.example.com/fund-detail';
+                url = fallback;
+            }
+            else if (btn.classList.contains('btn-outline') && btn.parentElement?.classList?.contains('sub-card')) {
+                url = btn.getAttribute('data-url') || 'https://www.example.com/industry-logic';
+            }
+            else {
+                url = 'https://www.example.com/default';
+            }
+        }
+        if (url && url !== '#') {
+            window.open(url, '_blank');
+        }
+        event.stopPropagation();
+    }
+
+    // 绑定所有具有 data-url 或 需要跳转的按钮
+    const allInteractiveBtns = document.querySelectorAll(`
+        .btn-interact, 
+        .fund-interact, 
+        .sub-card .btn-interact,
+        #metalAdviceBtn,
+        #spaceAdviceBtn,
+        #summaryDownloadBtn,
+        #contactBtn
+    `);
+    allInteractiveBtns.forEach(btn => {
+        // 避免重复绑定
+        btn.removeEventListener('click', handleButtonRedirect);
+        btn.addEventListener('click', handleButtonRedirect);
+        // 确保每个按钮都有 data-url，如果没有，根据上下文补充默认
+        if (!btn.hasAttribute('data-url')) {
+            if (btn.id === 'metalAdviceBtn') btn.setAttribute('data-url', 'https://www.example.com/metal-portfolio');
+            else if (btn.id === 'spaceAdviceBtn') btn.setAttribute('data-url', 'https://www.example.com/space-portfolio');
+            else if (btn.id === 'summaryDownloadBtn') btn.setAttribute('data-url', 'https://www.example.com/whitepaper');
+            else if (btn.id === 'contactBtn') btn.setAttribute('data-url', 'https://www.example.com/advisor');
+            else if (btn.classList.contains('fund-interact')) {
+                // 根据基金名称模拟链接
+                const fundName = btn.innerText.trim();
+                if (fundName.includes('512400')) btn.setAttribute('data-url', 'https://www.example.com/fund/512400');
+                else if (fundName.includes('516780')) btn.setAttribute('data-url', 'https://www.example.com/fund/516780');
+                else if (fundName.includes('561160')) btn.setAttribute('data-url', 'https://www.example.com/fund/561160');
+                else if (fundName.includes('512810')) btn.setAttribute('data-url', 'https://www.example.com/fund/512810');
+                else if (fundName.includes('159875')) btn.setAttribute('data-url', 'https://www.example.com/fund/159875');
+                else if (fundName.includes('560160')) btn.setAttribute('data-url', 'https://www.example.com/fund/560160');
+                else btn.setAttribute('data-url', 'https://www.example.com/fund/general');
+            }
+            else if (btn.classList.contains('btn-outline') && btn.closest('.sub-card')) {
+                btn.setAttribute('data-url', 'https://www.example.com/industry-logic');
+            }
+        }
+    });
+
+    // 额外处理可能遗漏的“一键解读逻辑”按钮（data-url已存在则无需额外动作）
+    // 卡片渐现动画
+    const cards = document.querySelectorAll('.card');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if(e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    cards.forEach(c => { 
+        c.style.opacity = '0'; 
+        c.style.transform = 'translateY(20px)'; 
+        c.style.transition = 'opacity 0.6s, transform 0.6s'; 
+        observer.observe(c); 
+    });
+</script>
+</body>
+</html>
