@@ -276,6 +276,15 @@
         .bottom-nav-item i { font-size: 1.5rem; }
         .bottom-nav-item.active { color: #f0b90b; background: rgba(240,185,11,0.15); }
 
+        .responsive-img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
         @media (min-width: 900px) {
             .bottom-nav { display: none !important; }
             .side-nav { display: flex; }
@@ -288,6 +297,13 @@
             .hero-content p { font-size: 1rem; }
             .carousel-btn { width: 36px; height: 36px; font-size: 1.2rem; }
         }
+        
+        /* 不同屏幕尺寸适配 */
+        @media (max-width: 768px) {
+        .responsive-img {
+            margin: 15px auto;
+            }
+        }
 
         .container {
             max-width: 1280px;
@@ -296,6 +312,100 @@
             position: relative;
             z-index: 2;
         }
+
+            /* 图片容器样式 */
+    .image-container {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+    
+    .image-container:hover {
+        transform: scale(1.02);
+    }
+    
+    /* 可点击图片样式 */
+    .clickable-img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    
+    .clickable-img:hover {
+        box-shadow: 0 8px 24px rgba(240,185,11,0.3);
+        transform: translateY(-2px);
+    }
+    
+    /* 隐藏图片容器 - 初始状态 */
+    .hidden-img-wrapper {
+        max-width: 100%;
+        margin-top: 20px;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        pointer-events: none;
+        display: none;
+    }
+    
+    /* 显示状态 */
+    .hidden-img-wrapper.show {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+        animation: fadeInUp 0.6s ease forwards;
+    }
+    
+    /* 动画效果 */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* 脉冲提示动画（引导点击） */
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(240, 185, 11, 0.4);
+        }
+        70% {
+            box-shadow: 0 0 0 10px rgba(240, 185, 11, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(240, 185, 11, 0);
+        }
+    }
+    
+    .clickable-img {
+        animation: pulse 2s infinite;
+    }
+    
+    /* 点击提示标签 */
+    .click-hint {
+        display: inline-block;
+        background: rgba(240, 185, 11, 0.9);
+        color: #0a0a1a;
+        font-size: 12px;
+        padding: 4px 12px;
+        border-radius: 20px;
+        margin-top: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+    
+    .image-container:hover .click-hint {
+        background: #f0b90b;
+        transform: translateY(-2px);
+    }
 
         /* 四个模块背景 */
         .module-bg-1, .module-bg-2, .module-bg-3, .module-bg-4 {
@@ -421,9 +531,9 @@
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-        <h1>智投未来 · 赛道掘金</h1>
+        <h1>仰望星空 · 点石成金</h1>
         <p>有色金属 | 商业航天 双星驱动</p>
-        <div class="hero-sub">把握产业浪潮 配置核心资产</div>
+        <div class="hero-sub">2026年热点行业基金营销专题策划方案</div>
     </div>
     <!-- 手动切换按钮 -->
     <div class="carousel-btn prev" id="prevSlide"><i class="fas fa-chevron-left"></i></div>
@@ -500,73 +610,70 @@
     </div>
 </div>
 
-<!-- 模块2: 有色金属 -->
+<!-- 模块2: 有色金属 · 深度融入文档内容 -->
 <div id="module2" class="module-bg-2">
     <div class="container module-section">
         <div class="card fade-in">
-            <div class="section-title">
-                <i class="fas fa-gem"></i> 有色金属 · 深度解析
-            </div>
+            <div class="section-title"><i class="fas fa-gem"></i> 有色金属 · 周期共振 & 新质生产力核心材料</div>
+            <!-- 布局时机 + 核心逻辑 -->
             <div>
-                <h3>
-                    <i class="fas fa-chart-pie"></i> 赛道全景
-                </h3>
-                <p>工业金属+能源金属+贵金属，新能源车光伏拉动铜铝，锂电高景气，稀土永磁受益。</p>
+                <h3><i class="fas fa-chart-line"></i> 为什么现在是布局时机？</h3>
+            <!-- 相关政策支持区块 融入文档链接 -->
+            <div class="advice-block" style="margin: 24px 0 16px 0;">
+                <h3><i class="fas fa-file-alt"></i> 相关政策支持</h3>
+                <p>🔗<b><a href="https://www.gov.cn/zhengce/202509/content_7042679.htm?ddtab=true" target="_blank" class="policy-link">《有色金属行业稳增长工作方案(2025—2026年)》解读</a></b>   
+                <ul style="margin-left: 1.2rem; margin-top: 12px;">
+                    <li>📌 <strong>明确行业增加值年均增长5%</strong></li>
+                    <li>⛏️ <strong>10种有色金属产量年均增长1.5%</strong></li>
+                    <li>🚗 <strong>铜、铝、锂等国内资源开发提速，再生金属产量目标2000万吨</strong></li>
+                    <img src="gf_fund/assets/insert/01.png" alt="有色01" class="responsive-img">
+                    <li><strong>美联储降息 + 美元信用重构 + 三重力量向上：</strong></li>
+                    美联储降息周期开启，全球流动性宽松，美元信用体系重构，强化了黄金等贵金属的金融属性。
+                </ul>
             </div>
-            <div class="fund-match">
-                <h3>
-                    匹配基金产品
-                </h3>
-            <div class="fund-item">
-                <span>
-                    <span class="fund-name">有色金属ETF</span>
-                    <span class="fund-code">512400</span>
-                </span>
-                <button class="btn-small fund-interact" data-url="https://www.example.com/fund/512400" data-linktype="fund">
-                    📈 查看详情
-                </button>
-            </div>
-            <div class="fund-item">
-                <span>
-                    <span class="fund-name">稀土产业ETF</span>
-                    <span class="fund-code">516780</span>
-                </span>
-                <button class="btn-small fund-interact" data-url="https://www.example.com/fund/516780" data-linktype="fund">
-                    📈 查看详情
-                </button>
-            </div>
-            <div class="fund-item">
-                <span>
-                    <span class="fund-name">锂电新材料ETF</span>
-                    <span class="fund-code">561160</span>
-                </span>
-                <button class="btn-small fund-interact" data-url="https://www.example.com/fund/561160" data-linktype="fund">
-                    📈 查看详情
-                </button>
-            </div>
-            <div class="fund-item">
-                <span>
-                    <span class="fund-name">有色龙头主动权益</span>
-                    <span class="fund-code">(优选)</span>
-                </span>
-                <button class="btn-small fund-interact" data-url="https://www.example.com/fund/metal-equity" data-linktype="fund">
-                    📈 查看详情
-                </button>
-            </div>
-        </div>
-        <div class="advice-block">
-            <h3>投资组合行动建议</h3>
-            <ul>
-                <li>核心-卫星策略：配置15%-20%有色金属ETF</li>
-                <li>定投布局：周定投分批建仓锂/稀土</li>
-                <li>风险控制：5%~10%黄金ETF对冲</li>
-            </ul>
-            <button class="btn-interact" id="metalAdviceBtn" data-url="https://www.example.com/metal-portfolio" data-linktype="advice">
-                获取个性化配置方案
-            </button>
+            <div class="advice-block" style="margin: 24px 0 16px 0;">
+                <h3><i class="fas fa-file-alt"></i> 供需共振</h3>
+<ul style="margin-left: 1.2rem; margin-top: 12px;">
+    <li><strong>供给侧受产能刚性约束</strong></li>
+    <!-- 可点击的02.png -->
+    <div class="image-container" id="clickableImgContainer">
+        <img src="gf_fund/assets/insert/02.png" alt="点击查看详细数据" class="clickable-img" id="triggerImage">
+        <div class="click-hint">
+            <i class="fas fa-mouse-pointer"></i> 点击查看供需缺口数据
         </div>
     </div>
-</div>
+    <!-- 隐藏的03.png（初始隐藏） -->
+    <div class="hidden-img-wrapper" id="hiddenImageWrapper">
+        <img src="gf_fund/assets/insert/03.png" alt="有色03" style="max-width:100%; border-radius:12px;">
+        <div style="font-size:12px; color:#f0b90b; margin-top:8px; text-align:center;">
+            <i class="fas fa-chart-line"></i> 供需缺口趋势图
+        </div>
+    </div>
+</ul>
+            </div> 
+            <div class="advice-block" style="margin: 24px 0 16px 0;">
+                <h3><i class="fas fa-file-alt"></i> 新兴势力-AI算力 & 机器人新需求崛起</h3>
+                <ul style="margin-left: 1.2rem; margin-top: 12px;">
+                    <li> <strong>AI算力中心铜缆、变压器需求激</strong></li>
+                    <li> <strong>人形机器人电机用稀土永磁材料</strong></li>
+                    <li> <strong>电网投资加速铜库存去化</strong></li>
+                    <img src="gf_fund/assets/insert/04.png" alt="有色01" class="responsive-img">
+                </ul>
+            </div>                       
+            <div class="fund-match">
+                <h3>🔗 匹配基金产品</h3>
+                <div class="fund-item"><span><span class="fund-name">有色金属ETF</span> <span class="fund-code">512400</span></span><button class="btn-small fund-interact" data-url="https://www.example.com/fund/512400">📈 查看详情</button></div>
+                <div class="fund-item"><span><span class="fund-name">稀土产业ETF</span> <span class="fund-code">516780</span></span><button class="btn-small fund-interact" data-url="https://www.example.com/fund/516780">📈 查看详情</button></div>
+                <div class="fund-item"><span><span class="fund-name">锂电新材料ETF</span> <span class="fund-code">561160</span></span><button class="btn-small fund-interact" data-url="https://www.example.com/fund/561160">📈 查看详情</button></div>
+                <div class="fund-item"><span><span class="fund-name">有色龙头主动权益</span> <span class="fund-code">(优选)</span></span><button class="btn-small fund-interact" data-url="https://www.example.com/fund/metal-equity">📈 查看详情</button></div>
+            </div>
+            <div class="advice-block">
+                <h3>📌 投资组合行动建议</h3>
+                <ul><li>核心-卫星策略：配置15%-20%有色金属ETF</li><li>定投布局：周定投分批建仓锂/稀土</li><li>风险控制：5%~10%黄金ETF对冲</li></ul>
+                <button class="btn-interact" id="metalAdviceBtn" data-url="https://www.example.com/metal-portfolio">获取个性化配置方案</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- 模块3: 商业航天 -->
@@ -712,6 +819,79 @@
     document.getElementById('nextSlide').addEventListener('click', nextSlide);
     createDots();
     resetAutoPlay();
+
+    document.addEventListener('DOMContentLoaded', function() {
+    const triggerImage = document.getElementById('triggerImage');
+    const hiddenImageWrapper = document.getElementById('hiddenImageWrapper');
+    
+    // 调试：检查元素是否找到
+    console.log('triggerImage:', triggerImage);
+    console.log('hiddenImageWrapper:', hiddenImageWrapper);
+    
+    if (triggerImage && hiddenImageWrapper) {
+        let isImageVisible = false;
+        
+        // 定义切换函数
+        function toggleImage(event) {
+            if (event) event.stopPropagation();
+            
+            console.log('点击触发，当前状态:', isImageVisible);
+            
+            if (!isImageVisible) {
+                // 显示03.png
+                hiddenImageWrapper.classList.add('show');
+                isImageVisible = true;
+                
+                // 改变提示文字
+                const hint = document.querySelector('#clickableImgContainer .click-hint');
+                if (hint) {
+                    hint.innerHTML = '<i class="fas fa-compress"></i> 点击收起图表';
+                }
+                console.log('图片已显示');
+            } else {
+                // 隐藏03.png
+                hiddenImageWrapper.classList.remove('show');
+                isImageVisible = false;
+                
+                // 恢复提示文字
+                const hint = document.querySelector('#clickableImgContainer .click-hint');
+                if (hint) {
+                    hint.innerHTML = '<i class="fas fa-mouse-pointer"></i> 点击查看供需缺口数据';
+                }
+                console.log('图片已隐藏');
+            }
+        }
+        
+        // 绑定点击事件（多种方式确保生效）
+        triggerImage.addEventListener('click', toggleImage);
+        triggerImage.addEventListener('touchstart', toggleImage); // 移动端支持
+        
+        // 也绑定到整个容器
+        const container = document.getElementById('clickableImgContainer');
+        if (container) {
+            container.addEventListener('click', toggleImage);
+        }
+        
+        // 添加键盘支持
+        triggerImage.setAttribute('role', 'button');
+        triggerImage.setAttribute('tabindex', '0');
+        triggerImage.setAttribute('aria-expanded', 'false');
+        
+        triggerImage.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleImage();
+            }
+        });
+        
+        // 添加CSS光标样式确保可点击
+        triggerImage.style.cursor = 'pointer';
+        
+        console.log('事件绑定完成');
+    } else {
+        console.error('找不到元素！请检查HTML中的id是否正确');
+    }
+});
 
     // 向下箭头滚动到下一屏 (模块1)
     const scrollArrow = document.getElementById('scrollDownArrow');
